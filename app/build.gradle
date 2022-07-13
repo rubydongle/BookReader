@@ -60,20 +60,20 @@ android {
 
     }
 
-    signingConfigs {
-        release {
-            storeFile file(RELEASE_STORE_FILE)
-            storePassword RELEASE_STORE_PASSWORD
-            keyAlias RELEASE_KEY_ALIAS
-            keyPassword RELEASE_KEY_PASSWORD
-        }
-    }
+//    signingConfigs {
+//        release {
+//            storeFile file(RELEASE_STORE_FILE)
+//            storePassword RELEASE_STORE_PASSWORD
+//            keyAlias RELEASE_KEY_ALIAS
+//            keyPassword RELEASE_KEY_PASSWORD
+//        }
+//    }
 
 
     buildTypes {
         release {
             minifyEnabled false
-            signingConfig signingConfigs.release
+//            signingConfig signingConfigs.release
             debuggable false
         }
         debug {
@@ -248,6 +248,20 @@ android {
                     appSafeMode  : "false"
             ]
         }
+        comic_reader {
+            dimension "version"
+            applicationId "comic.reader"
+            manifestPlaceholders = [
+                    appName      : "Comic Reader",
+                    appIcon      : "@mipmap/icon_pdf_reader",
+                    appRoundIcon : "@mipmap/launcher_epub_reader",
+                    appGdriveKey : "961762082517-p6b2kqqimju6rlp314mu56lipvq2m68r.apps.googleusercontent.com",
+                    admobAppId   : "ca-app-pub-8347903083053959~8118779310",
+                    admobBannerId: "ca-app-pub-8347903083053959/1553370961",
+                    admobFullId  : "ca-app-pub-8347903083053959/6163356354",
+                    appSafeMode  : "false"
+            ]
+        }
         fdroid {
             minSdkVersion 14
             dimension "version"
@@ -382,6 +396,7 @@ dependencies {
     pdf_classicImplementation 'com.google.firebase:firebase-ads-lite:19.8.0'
     epub_readerImplementation 'com.google.firebase:firebase-ads-lite:19.8.0'
     huaweiImplementation 'com.google.firebase:firebase-ads-lite:19.8.0'
+    comic_readerImplementation 'com.google.firebase:firebase-ads-lite:19.8.0'
 
     implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava'
     implementation 'androidx.work:work-runtime:2.7.1'
@@ -457,7 +472,7 @@ task incVersion() {
 
 if (!taskName.contains("Fdroid")) {
 
-    apply plugin: 'com.google.gms.google-services'
+//    apply plugin: 'com.google.gms.google-services'
 
     dependencies {
         implementation "com.github.junrar:junrar:4.0.0"
