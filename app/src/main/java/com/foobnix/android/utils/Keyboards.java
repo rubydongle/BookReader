@@ -10,7 +10,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
 import com.foobnix.model.AppState;
-import com.foobnix.ui2.MainTabs2;
+import com.foobnix.comicui.MainActivity;
 
 public class Keyboards {
 
@@ -74,7 +74,7 @@ public class Keyboards {
             if (a == null) {
                 return;
             }
-            if (a instanceof MainTabs2 && AppState.get().fullScreenMainMode == AppState.FULL_SCREEN_NORMAL) {
+            if (a instanceof MainActivity && AppState.get().fullScreenMainMode == AppState.FULL_SCREEN_NORMAL) {
                 return;
             } else if (AppState.get().fullScreenMode == AppState.FULL_SCREEN_NORMAL) {
                 return;

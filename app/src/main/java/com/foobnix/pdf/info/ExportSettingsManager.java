@@ -11,7 +11,7 @@ import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.ResultResponse;
 import com.foobnix.dao2.FileMeta;
 import com.foobnix.model.AppProfile;
-import com.foobnix.ui2.AppDB;
+import com.foobnix.comicui.AppDB;
 
 import org.librera.JSONArray;
 import org.librera.JSONException;

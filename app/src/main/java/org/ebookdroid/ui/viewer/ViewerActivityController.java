@@ -31,7 +31,7 @@ import com.foobnix.sys.TempHolder;
 import com.foobnix.sys.VerticalModeController;
 import com.foobnix.tts.TTSEngine;
 import com.foobnix.tts.TTSNotification;
-import com.foobnix.ui2.FileMetaCore;
+import com.foobnix.comicui.FileMetaCore;
 
 import org.ebookdroid.BookType;
 import org.ebookdroid.common.settings.SettingsManager;

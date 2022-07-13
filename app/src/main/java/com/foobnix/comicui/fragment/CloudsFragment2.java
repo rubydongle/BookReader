@@ -1,4 +1,4 @@
-package com.foobnix.ui2.fragment;
+package com.foobnix.comicui.fragment;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -18,6 +18,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.TxtUtils;
+import com.foobnix.comicui.BooksService;
+import com.foobnix.comicui.MainActivity;
+import com.foobnix.comicui.adapter.FileMetaAdapter;
 import com.foobnix.dao2.FileMeta;
 import com.foobnix.model.AppState;
 import com.foobnix.pdf.info.Clouds;
@@ -31,9 +34,6 @@ import com.foobnix.pdf.info.wrapper.UITab;
 import com.foobnix.pdf.search.activity.msg.MessageSyncFinish;
 import com.foobnix.pdf.search.activity.msg.MessageSyncUpdateList;
 import com.foobnix.pdf.search.activity.msg.OpenDirMessage;
-import com.foobnix.ui2.BooksService;
-import com.foobnix.ui2.MainTabs2;
-import com.foobnix.ui2.adapter.FileMetaAdapter;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -134,7 +134,7 @@ public class CloudsFragment2 extends UIFragment<FileMeta> {
                     public void run() {
                         if (isDropbox) {
                             Intent intent = new Intent(UIFragment.INTENT_TINT_CHANGE)//
-                                    .putExtra(MainTabs2.EXTRA_PAGE_NUMBER, UITab.getCurrentTabIndex(UITab.BrowseFragment));//
+                                    .putExtra(MainActivity.EXTRA_PAGE_NUMBER, UITab.getCurrentTabIndex(UITab.BrowseFragment));//
                             LocalBroadcastManager.getInstance(getActivity()).sendBroadcast(intent);
 
                             EventBus.getDefault().post(new OpenDirMessage(Clouds.PREFIX_CLOUD_DROPBOX + "/"));
@@ -165,7 +165,7 @@ public class CloudsFragment2 extends UIFragment<FileMeta> {
                         }
                         if (isDrive) {
                             Intent intent = new Intent(UIFragment.INTENT_TINT_CHANGE)//
-                                    .putExtra(MainTabs2.EXTRA_PAGE_NUMBER, UITab.getCurrentTabIndex(UITab.BrowseFragment));//
+                                    .putExtra(MainActivity.EXTRA_PAGE_NUMBER, UITab.getCurrentTabIndex(UITab.BrowseFragment));//
                             LocalBroadcastManager.getInstance(getActivity()).sendBroadcast(intent);
 
                             EventBus.getDefault().post(new OpenDirMessage(Clouds.PREFIX_CLOUD_GDRIVE + "/"));
@@ -193,7 +193,7 @@ public class CloudsFragment2 extends UIFragment<FileMeta> {
                     public void run() {
                         if (isDrive) {
                             Intent intent = new Intent(UIFragment.INTENT_TINT_CHANGE)//
-                                    .putExtra(MainTabs2.EXTRA_PAGE_NUMBER, UITab.getCurrentTabIndex(UITab.BrowseFragment));//
+                                    .putExtra(MainActivity.EXTRA_PAGE_NUMBER, UITab.getCurrentTabIndex(UITab.BrowseFragment));//
                             LocalBroadcastManager.getInstance(getActivity()).sendBroadcast(intent);
 
                             EventBus.getDefault().post(new OpenDirMessage(Clouds.PREFIX_CLOUD_ONEDRIVE + "/"));

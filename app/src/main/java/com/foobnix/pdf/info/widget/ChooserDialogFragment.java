@@ -16,7 +16,7 @@ import com.foobnix.android.utils.Keyboards;
 import com.foobnix.android.utils.ResultResponse;
 import com.foobnix.android.utils.ResultResponse2;
 import com.foobnix.pdf.info.R;
-import com.foobnix.ui2.fragment.BrowseFragment2;
+import com.foobnix.comicui.fragment.BrowseFragment2;
 
 public class ChooserDialogFragment extends DialogFragment {
 

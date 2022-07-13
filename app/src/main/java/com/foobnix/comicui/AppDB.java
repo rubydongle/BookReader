@@ -1,4 +1,4 @@
-package com.foobnix.ui2;
+package com.foobnix.comicui;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.StringDB;
 import com.foobnix.android.utils.TxtUtils;
+import com.foobnix.comicui.adapter.FileMetaAdapter;
+import com.foobnix.comicui.fragment.SearchFragment2;
 import com.foobnix.dao2.DaoMaster;
 import com.foobnix.dao2.DaoSession;
 import com.foobnix.dao2.DatabaseUpgradeHelper;
@@ -22,8 +24,6 @@ import com.foobnix.pdf.info.Clouds;
 import com.foobnix.pdf.info.ExtUtils;
 import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.wrapper.UITab;
-import com.foobnix.ui2.adapter.FileMetaAdapter;
-import com.foobnix.ui2.fragment.SearchFragment2;
 
 import org.greenrobot.greendao.Property;
 import org.greenrobot.greendao.database.Database;

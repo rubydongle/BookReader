@@ -34,7 +34,7 @@ import com.foobnix.pdf.info.view.AlertDialogs;
 import com.foobnix.pdf.info.view.DragingPopup;
 import com.foobnix.pdf.info.wrapper.PasswordState;
 import com.foobnix.pdf.search.view.AsyncProgressResultToastTask;
-import com.foobnix.ui2.AppDB;
+import com.foobnix.comicui.AppDB;
 
 import java.io.File;
 import java.util.ArrayList;

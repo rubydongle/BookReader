@@ -7,7 +7,7 @@ import com.foobnix.model.AppSP;
 import com.foobnix.model.AppState;
 import com.foobnix.pdf.info.ExtUtils;
 import com.foobnix.sys.TempHolder;
-import com.foobnix.ui2.AppDB;
+import com.foobnix.comicui.AppDB;
 
 import org.ebookdroid.BookType;
 import org.ebookdroid.common.bitmaps.BitmapManager;

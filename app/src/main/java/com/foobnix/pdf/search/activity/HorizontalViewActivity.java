@@ -24,7 +24,6 @@ import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
-import android.view.ViewGroup;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.view.Window;
 import android.view.WindowManager;
@@ -105,10 +104,10 @@ import com.foobnix.tts.TTSEngine;
 import com.foobnix.tts.TTSNotification;
 import com.foobnix.tts.TTSService;
 import com.foobnix.tts.TtsStatus;
-import com.foobnix.ui2.AdsFragmentActivity;
-import com.foobnix.ui2.AppDB;
-import com.foobnix.ui2.MainTabs2;
-import com.foobnix.ui2.MyContextWrapper;
+import com.foobnix.comicui.AdsFragmentActivity;
+import com.foobnix.comicui.AppDB;
+import com.foobnix.comicui.MainActivity;
+import com.foobnix.comicui.MyContextWrapper;
 
 import org.ebookdroid.common.settings.SettingsManager;
 import org.ebookdroid.common.settings.books.SharedBooks;
@@ -183,7 +182,7 @@ public class HorizontalViewActivity extends AdsFragmentActivity {
             } else {
                 finish();
             }
-            MainTabs2.closeApp(HorizontalViewActivity.this);
+            MainActivity.closeApp(HorizontalViewActivity.this);
         }
     };
     long lastClick = 0;
@@ -1746,7 +1745,7 @@ public class HorizontalViewActivity extends AdsFragmentActivity {
 
                 @Override
                 public void run() {
-                    MainTabs2.closeApp(dc.getActivity());
+                    MainActivity.closeApp(dc.getActivity());
                 }
             });
         } else if (ev.getMessage().equals(MessageEvent.MESSAGE_PERFORM_CLICK)) {

@@ -36,9 +36,9 @@ import com.foobnix.pdf.info.wrapper.DocumentController;
 import com.foobnix.pdf.search.view.CloseAppDialog;
 import com.foobnix.sys.TempHolder;
 import com.foobnix.tts.TTSNotification;
-import com.foobnix.ui2.FileMetaCore;
-import com.foobnix.ui2.MainTabs2;
-import com.foobnix.ui2.MyContextWrapper;
+import com.foobnix.comicui.FileMetaCore;
+import com.foobnix.comicui.MainActivity;
+import com.foobnix.comicui.MyContextWrapper;
 
 import org.ebookdroid.common.settings.SettingsManager;
 import org.ebookdroid.ui.viewer.viewers.PdfSurfaceView;
@@ -286,7 +286,7 @@ public class VerticalViewActivity extends AbstractActionActivity<VerticalViewAct
         public void run() {
             LOG.d("Close App");
             getController().closeActivityFinal(null);
-            MainTabs2.closeApp(VerticalViewActivity.this);
+            MainActivity.closeApp(VerticalViewActivity.this);
         }
     };
 

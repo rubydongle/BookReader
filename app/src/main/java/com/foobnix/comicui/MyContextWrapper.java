@@ -1,4 +1,4 @@
-package com.foobnix.ui2;
+package com.foobnix.comicui;
 
 import android.annotation.TargetApi;
 import android.content.Context;

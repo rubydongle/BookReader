@@ -1,4 +1,4 @@
-package com.foobnix.ui2.fragment;
+package com.foobnix.comicui.fragment;
 
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
@@ -45,10 +45,14 @@ import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.ResultResponse;
 import com.foobnix.android.utils.StringDB;
 import com.foobnix.android.utils.TxtUtils;
+import com.foobnix.comicui.AppDB;
+import com.foobnix.comicui.AppDB.*;
+import com.foobnix.comicui.BooksService;
+import com.foobnix.comicui.adapter.AuthorsAdapter2;
+import com.foobnix.comicui.adapter.FileMetaAdapter;
 import com.foobnix.dao2.FileMeta;
 import com.foobnix.model.AppState;
 import com.foobnix.pdf.info.AppsConfig;
-import com.foobnix.pdf.info.BuildConfig;
 import com.foobnix.pdf.info.IMG;
 import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.TintUtil;
@@ -59,12 +63,6 @@ import com.foobnix.pdf.info.widget.DialogTranslateFromTo;
 import com.foobnix.pdf.info.widget.PrefDialogs;
 import com.foobnix.pdf.info.wrapper.PopupHelper;
 import com.foobnix.pdf.search.activity.msg.OpenTagMessage;
-import com.foobnix.ui2.AppDB;
-import com.foobnix.ui2.AppDB.SEARCH_IN;
-import com.foobnix.ui2.AppDB.SORT_BY;
-import com.foobnix.ui2.BooksService;
-import com.foobnix.ui2.adapter.AuthorsAdapter2;
-import com.foobnix.ui2.adapter.FileMetaAdapter;
 
 import org.ebookdroid.LibreraApp;
 import org.greenrobot.eventbus.Subscribe;
@@ -210,7 +208,7 @@ public class SearchFragment2 extends UIFragment<FileMeta> {
         @Override
         public boolean onResultRecive(String result) {
             rememberPos = ((LinearLayoutManager) recyclerView.getLayoutManager()).findLastVisibleItemPosition();
-            onMetaInfoClick(SEARCH_IN.getByMode(AppState.get().libraryMode), result);
+            onMetaInfoClick(AppDB.SEARCH_IN.getByMode(AppState.get().libraryMode), result);
             return false;
         }
     };
@@ -227,9 +225,9 @@ public class SearchFragment2 extends UIFragment<FileMeta> {
         @Override
         public boolean onResultRecive(String result) {
             if (result.contains(NO_SERIES)) {
-                onMetaInfoClick(SEARCH_IN.getByPrefix(searchEditText.getText().toString()), result);
+                onMetaInfoClick(AppDB.SEARCH_IN.getByPrefix(searchEditText.getText().toString()), result);
             } else {
-                onMetaInfoClick(SEARCH_IN.SERIES, result);
+                onMetaInfoClick(AppDB.SEARCH_IN.SERIES, result);
             }
             return false;
         }
@@ -282,7 +280,7 @@ public class SearchFragment2 extends UIFragment<FileMeta> {
 
     public void initAutocomplition() {
         autocomplitions.clear();
-        for (SEARCH_IN search : AppDB.SEARCH_IN.values()) {
+        for (SEARCH_IN search : SEARCH_IN.values()) {
             if (search == SEARCH_IN.SERIES) {
                 autocomplitions.add(search.getDotPrefix() + " *");
             } else {
@@ -580,8 +578,8 @@ public class SearchFragment2 extends UIFragment<FileMeta> {
         LocalBroadcastManager.getInstance(getActivity()).unregisterReceiver(broadcastReceiver);
     }
 
-    private void onMetaInfoClick(SEARCH_IN mode, String result) {
-        if (mode == SEARCH_IN.SERIES && !result.startsWith(EMPTY_ID)) {
+    private void onMetaInfoClick(AppDB.SEARCH_IN mode, String result) {
+        if (mode == AppDB.SEARCH_IN.SERIES && !result.startsWith(EMPTY_ID)) {
             result = StringDB.EXACTMATCHCHAR + result + StringDB.EXACTMATCHCHAR;
         }
 
@@ -629,7 +627,7 @@ public class SearchFragment2 extends UIFragment<FileMeta> {
             return;
         }
         searchEditText.setHint(R.string.msg_loading);
-        sortBy.setText(AppDB.SORT_BY.getByID(AppState.get().sortBy).getResName());
+        sortBy.setText(SORT_BY.getByID(AppState.get().sortBy).getResName());
 
         sortOrder.setImageResource(AppState.get().isSortAsc ? R.drawable.glyphicons_602_chevron_down : R.drawable.glyphicons_601_chevron_up);
 
@@ -665,7 +663,7 @@ public class SearchFragment2 extends UIFragment<FileMeta> {
                 txt = txt.replace(NO_SERIES, "");
             }
 
-            List<FileMeta> searchBy = AppDB.get().searchBy(txt, SORT_BY.getByID(AppState.get().sortBy), AppState.get().isSortAsc);
+            List<FileMeta> searchBy = AppDB.get().searchBy(txt, AppDB.SORT_BY.getByID(AppState.get().sortBy), AppState.get().isSortAsc);
 
             List<String> result = new ArrayList<String>();
             boolean byGenre = txt.startsWith(SEARCH_IN.GENRE.getDotPrefix());

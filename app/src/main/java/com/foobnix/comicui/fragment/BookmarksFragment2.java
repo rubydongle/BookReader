@@ -1,4 +1,4 @@
-package com.foobnix.ui2.fragment;
+package com.foobnix.comicui.fragment;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -23,6 +23,7 @@ import com.foobnix.android.utils.Keyboards;
 import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.ResultResponse;
 import com.foobnix.android.utils.TxtUtils;
+import com.foobnix.comicui.adapter.BookmarksAdapter2;
 import com.foobnix.model.AppBookmark;
 import com.foobnix.model.AppState;
 import com.foobnix.pdf.info.BookmarksData;
@@ -32,7 +33,6 @@ import com.foobnix.pdf.info.TintUtil;
 import com.foobnix.pdf.info.view.MyPopupMenu;
 import com.foobnix.pdf.info.widget.FileInformationDialog;
 import com.foobnix.pdf.info.wrapper.PopupHelper;
-import com.foobnix.ui2.adapter.BookmarksAdapter2;
 
 import java.io.File;
 import java.util.ArrayList;

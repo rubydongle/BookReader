@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.foobnix.ui2.fast;
+package com.foobnix.comicui.fast;
 
 public interface FastScrollStateChangeListener {
 

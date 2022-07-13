@@ -288,7 +288,7 @@
         </activity>
 
         <activity
-            android:name="com.foobnix.ui2.MainTabs2"
+            android:name="com.foobnix.comicui.MainActivity"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
             android:exported="true"
             android:launchMode="singleTop"

@@ -1,4 +1,4 @@
-package com.foobnix.ui2.adapter;
+package com.foobnix.comicui.adapter;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -13,6 +13,9 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.ResultResponse;
 import com.foobnix.android.utils.ResultResponse2;
+import com.foobnix.comicui.AppDB;
+import com.foobnix.comicui.MainActivity;
+import com.foobnix.comicui.fragment.UIFragment;
 import com.foobnix.dao2.FileMeta;
 import com.foobnix.model.AppData;
 import com.foobnix.model.AppSP;
@@ -36,9 +39,6 @@ import com.foobnix.pdf.search.activity.msg.OpenDirMessage;
 import com.foobnix.pdf.search.activity.msg.OpenTagMessage;
 import com.foobnix.pdf.search.view.AsyncProgressTask;
 import com.foobnix.sys.TempHolder;
-import com.foobnix.ui2.AppDB;
-import com.foobnix.ui2.MainTabs2;
-import com.foobnix.ui2.fragment.UIFragment;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -87,7 +87,7 @@ public class DefaultListeners {
 
     public static void showBooksByTag(final Activity a, String result) {
         Intent intent = new Intent(UIFragment.INTENT_TINT_CHANGE)//
-                .putExtra(MainTabs2.EXTRA_PAGE_NUMBER, UITab.getCurrentTabIndex(UITab.SearchFragment));//
+                .putExtra(MainActivity.EXTRA_PAGE_NUMBER, UITab.getCurrentTabIndex(UITab.SearchFragment));//
         LocalBroadcastManager.getInstance(a).sendBroadcast(intent);
 
         EventBus.getDefault().post(new OpenTagMessage(result));
@@ -126,8 +126,8 @@ public class DefaultListeners {
                             IMG.clearCache(result.getPath());
 
                             Intent intent = new Intent(UIFragment.INTENT_TINT_CHANGE)//
-                                    .putExtra(MainTabs2.EXTRA_NOTIFY_REFRESH, true)//
-                                    .putExtra(MainTabs2.EXTRA_PAGE_NUMBER, -2);//
+                                    .putExtra(MainActivity.EXTRA_NOTIFY_REFRESH, true)//
+                                    .putExtra(MainActivity.EXTRA_PAGE_NUMBER, -2);//
                             LocalBroadcastManager.getInstance(a).sendBroadcast(intent);
                         }
                     });
@@ -144,7 +144,7 @@ public class DefaultListeners {
                     final int currentTabIndex = UITab.getCurrentTabIndex(UITab.BrowseFragment);
                     Intent intent = new Intent(UIFragment.INTENT_TINT_CHANGE)//
 
-                            .putExtra(MainTabs2.EXTRA_PAGE_NUMBER, currentTabIndex);//
+                            .putExtra(MainActivity.EXTRA_PAGE_NUMBER, currentTabIndex);//
 
                     LOG.d("EXTRA_PAGE_NUMBER", AppState.get().tabsOrder7, currentTabIndex);
 
@@ -216,7 +216,7 @@ public class DefaultListeners {
 
                 if (file.isDirectory()) {
                     Intent intent = new Intent(UIFragment.INTENT_TINT_CHANGE)//
-                            .putExtra(MainTabs2.EXTRA_PAGE_NUMBER, UITab.getCurrentTabIndex(UITab.BrowseFragment));//
+                            .putExtra(MainActivity.EXTRA_PAGE_NUMBER, UITab.getCurrentTabIndex(UITab.BrowseFragment));//
                     LocalBroadcastManager.getInstance(a).sendBroadcast(intent);
 
                     EventBus.getDefault().post(new OpenDirMessage(result.getPath()));
@@ -429,8 +429,8 @@ public class DefaultListeners {
                 result = AppDB.SEARCH_IN.AUTHOR.getDotPrefix() + " " + result;
 
                 Intent intent = new Intent(UIFragment.INTENT_TINT_CHANGE)//
-                        .putExtra(MainTabs2.EXTRA_SEACH_TEXT, result)//
-                        .putExtra(MainTabs2.EXTRA_PAGE_NUMBER, UITab.getCurrentTabIndex(UITab.SearchFragment));//
+                        .putExtra(MainActivity.EXTRA_SEACH_TEXT, result)//
+                        .putExtra(MainActivity.EXTRA_PAGE_NUMBER, UITab.getCurrentTabIndex(UITab.SearchFragment));//
 
                 LocalBroadcastManager.getInstance(a).sendBroadcast(intent);
                 return false;
@@ -447,8 +447,8 @@ public class DefaultListeners {
                 result = AppDB.SEARCH_IN.SERIES.getDotPrefix() + " " + result;
 
                 Intent intent = new Intent(UIFragment.INTENT_TINT_CHANGE)//
-                        .putExtra(MainTabs2.EXTRA_SEACH_TEXT, result)//
-                        .putExtra(MainTabs2.EXTRA_PAGE_NUMBER, UITab.getCurrentTabIndex(UITab.SearchFragment));//
+                        .putExtra(MainActivity.EXTRA_SEACH_TEXT, result)//
+                        .putExtra(MainActivity.EXTRA_PAGE_NUMBER, UITab.getCurrentTabIndex(UITab.SearchFragment));//
 
                 LocalBroadcastManager.getInstance(a).sendBroadcast(intent);
                 return false;

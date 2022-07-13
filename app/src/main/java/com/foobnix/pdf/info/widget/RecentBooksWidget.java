@@ -34,8 +34,8 @@ import com.foobnix.pdf.info.IMG;
 import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.search.activity.HorizontalViewActivity;
 import com.foobnix.sys.ImageExtractor;
-import com.foobnix.ui2.AppDB;
-import com.foobnix.ui2.MainTabs2;
+import com.foobnix.comicui.AppDB;
+import com.foobnix.comicui.MainActivity;
 
 import org.ebookdroid.LibreraApp;
 import org.ebookdroid.ui.viewer.VerticalViewActivity;
@@ -146,7 +146,7 @@ public class RecentBooksWidget extends AppWidgetProvider {
             RemoteViews v = new RemoteViews(context.getPackageName(), R.layout.widget_list_image);
             v.setImageViewResource(R.id.imageView1, R.drawable.books_widget);
 
-            Intent intent = new Intent(context, MainTabs2.class);
+            Intent intent = new Intent(context, MainActivity.class);
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_IMMUTABLE);
             v.setOnClickPendingIntent(R.id.imageView1, pendingIntent);
 

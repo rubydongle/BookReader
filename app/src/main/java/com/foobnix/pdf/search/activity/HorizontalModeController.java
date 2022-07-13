@@ -32,8 +32,8 @@ import com.foobnix.sys.ImageExtractor;
 import com.foobnix.sys.TempHolder;
 import com.foobnix.tts.TTSEngine;
 import com.foobnix.tts.TTSNotification;
-import com.foobnix.ui2.AppDB;
-import com.foobnix.ui2.FileMetaCore;
+import com.foobnix.comicui.AppDB;
+import com.foobnix.comicui.FileMetaCore;
 
 import org.ebookdroid.common.settings.SettingsManager;
 import org.ebookdroid.core.PageSearcher;

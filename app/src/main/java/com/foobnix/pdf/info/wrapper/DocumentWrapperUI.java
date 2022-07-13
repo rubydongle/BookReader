@@ -73,8 +73,8 @@ import com.foobnix.tts.TTSControlsView;
 import com.foobnix.tts.TTSEngine;
 import com.foobnix.tts.TTSService;
 import com.foobnix.tts.TtsStatus;
-import com.foobnix.ui2.AppDB;
-import com.foobnix.ui2.MainTabs2;
+import com.foobnix.comicui.AppDB;
+import com.foobnix.comicui.MainActivity;
 
 import org.ebookdroid.BookType;
 import org.ebookdroid.LibreraApp;
@@ -1618,7 +1618,7 @@ public class DocumentWrapperUI {
 
                     @Override
                     public void run() {
-                        MainTabs2.closeApp(dc.getActivity());
+                        MainActivity.closeApp(dc.getActivity());
                     }
                 });
                 dc.closeActivity();

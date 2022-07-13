@@ -1,4 +1,4 @@
-package com.foobnix.ui2;
+package com.foobnix.comicui;
 
 import android.view.View;
 import android.view.View.OnClickListener;

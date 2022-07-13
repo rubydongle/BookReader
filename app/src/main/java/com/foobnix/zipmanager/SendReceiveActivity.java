@@ -14,7 +14,7 @@ import com.foobnix.opds.OPDS;
 import com.foobnix.pdf.info.IMG;
 import com.foobnix.pdf.info.model.BookCSS;
 import com.foobnix.pdf.search.view.AsyncProgressTask;
-import com.foobnix.ui2.MyContextWrapper;
+import com.foobnix.comicui.MyContextWrapper;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

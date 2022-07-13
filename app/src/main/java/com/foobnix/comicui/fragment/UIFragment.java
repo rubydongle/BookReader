@@ -1,4 +1,4 @@
-package com.foobnix.ui2.fragment;
+package com.foobnix.comicui.fragment;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -25,6 +25,12 @@ import com.foobnix.android.utils.Apps;
 import com.foobnix.android.utils.Dips;
 import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.TxtUtils;
+import com.foobnix.comicui.MainActivity;
+import com.foobnix.comicui.adapter.AuthorsAdapter2;
+import com.foobnix.comicui.adapter.DefaultListeners;
+import com.foobnix.comicui.adapter.FileMetaAdapter;
+import com.foobnix.comicui.fast.FastScrollRecyclerView;
+import com.foobnix.comicui.fast.FastScrollStateChangeListener;
 import com.foobnix.model.AppState;
 import com.foobnix.pdf.info.AppsConfig;
 import com.foobnix.pdf.info.IMG;
@@ -36,12 +42,6 @@ import com.foobnix.pdf.search.activity.msg.NotifyAllFragments;
 import com.foobnix.pdf.search.activity.msg.OpenDirMessage;
 import com.foobnix.pdf.search.activity.msg.UpdateAllFragments;
 import com.foobnix.sys.TempHolder;
-import com.foobnix.ui2.MainTabs2;
-import com.foobnix.ui2.adapter.AuthorsAdapter2;
-import com.foobnix.ui2.adapter.DefaultListeners;
-import com.foobnix.ui2.adapter.FileMetaAdapter;
-import com.foobnix.ui2.fast.FastScrollRecyclerView;
-import com.foobnix.ui2.fast.FastScrollStateChangeListener;
 
 import org.ebookdroid.LibreraApp;
 import org.greenrobot.eventbus.EventBus;
@@ -63,7 +63,7 @@ public abstract class UIFragment<T> extends Fragment {
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            String txt = intent.getStringExtra(MainTabs2.EXTRA_SEACH_TEXT);
+            String txt = intent.getStringExtra(MainActivity.EXTRA_SEACH_TEXT);
             if (TxtUtils.isNotEmpty(txt)) {
                 onTextRecive(txt);
             } else {
@@ -100,7 +100,7 @@ public abstract class UIFragment<T> extends Fragment {
                 @Override
                 public void onFastScrollStop() {
                     IMG.resumeRequests(getContext());
-                    if (MainTabs2.isPullToRefreshEnable(getActivity(), swipeRefreshLayout)) {
+                    if (MainActivity.isPullToRefreshEnable(getActivity(), swipeRefreshLayout)) {
                         if (swipeRefreshLayout != null) {
                             swipeRefreshLayout.setEnabled(true);
                         }

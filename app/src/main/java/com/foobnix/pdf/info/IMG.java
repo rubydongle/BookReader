@@ -30,7 +30,7 @@ import com.foobnix.android.utils.LOG;
 import com.foobnix.model.AppState;
 import com.foobnix.pdf.search.activity.HorizontalViewActivity;
 import com.foobnix.sys.ImageExtractor;
-import com.foobnix.ui2.MainTabs2;
+import com.foobnix.comicui.MainActivity;
 
 import org.ebookdroid.LibreraApp;
 import org.ebookdroid.ui.viewer.VerticalViewActivity;
@@ -132,8 +132,8 @@ public class IMG {
             return Glide.with((HorizontalViewActivity) a);
         } else if (a instanceof VerticalViewActivity) {
             return Glide.with((VerticalViewActivity) a);
-        } else if (a instanceof MainTabs2) {
-            return Glide.with((MainTabs2) a);
+        } else if (a instanceof MainActivity) {
+            return Glide.with((MainActivity) a);
         } else {
             return Glide.with(LibreraApp.context);
         }

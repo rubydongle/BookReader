@@ -60,8 +60,8 @@ import com.foobnix.pdf.info.widget.ChooserDialogFragment;
 import com.foobnix.pdf.info.wrapper.DocumentController;
 import com.foobnix.pdf.info.wrapper.MagicHelper;
 import com.foobnix.sys.TempHolder;
-import com.foobnix.ui2.AppDB;
-import com.foobnix.ui2.AppDB.SEARCH_IN;
+import com.foobnix.comicui.AppDB;
+import com.foobnix.comicui.AppDB.SEARCH_IN;
 import com.jmedeisis.draglinearlayout.DragLinearLayout;
 
 import org.librera.JSONException;

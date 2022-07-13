@@ -1,4 +1,4 @@
-package com.foobnix.ui2.adapter;
+package com.foobnix.comicui.adapter;
 
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -13,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.foobnix.android.utils.ResultResponse;
 import com.foobnix.android.utils.TxtUtils;
+import com.foobnix.comicui.AppDB;
+import com.foobnix.comicui.AppRecycleAdapter;
 import com.foobnix.dao2.FileMeta;
 import com.foobnix.model.AppBookmark;
 import com.foobnix.model.AppState;
@@ -22,11 +24,8 @@ import com.foobnix.pdf.info.ExtUtils;
 import com.foobnix.pdf.info.IMG;
 import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.TintUtil;
-import com.foobnix.ui2.AppDB;
-import com.foobnix.ui2.AppRecycleAdapter;
-import com.foobnix.ui2.adapter.BookmarksAdapter2.BookmarksViewHolder;
 
-public class BookmarksAdapter2 extends AppRecycleAdapter<AppBookmark, BookmarksViewHolder> {
+public class BookmarksAdapter2 extends AppRecycleAdapter<AppBookmark, BookmarksAdapter2.BookmarksViewHolder> {
 
 
     public boolean withTitle = true;

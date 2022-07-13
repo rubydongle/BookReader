@@ -5,7 +5,7 @@ import com.foobnix.android.utils.TxtUtils;
 import com.foobnix.dao2.FileMeta;
 import com.foobnix.drive.GFile;
 import com.foobnix.model.SimpleMeta;
-import com.foobnix.ui2.adapter.FileMetaAdapter;
+import com.foobnix.comicui.adapter.FileMetaAdapter;
 
 import java.io.File;
 import java.util.Comparator;

@@ -1,4 +1,4 @@
-package com.foobnix.ui2.adapter;
+package com.foobnix.comicui.adapter;
 
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
@@ -11,16 +11,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.TxtUtils;
+import com.foobnix.comicui.AppRecycleAdapter;
+import com.foobnix.comicui.fast.FastScroller;
 import com.foobnix.model.AppState;
 import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.TintUtil;
-import com.foobnix.ui2.AppRecycleAdapter;
-import com.foobnix.ui2.adapter.AuthorsAdapter2.AuthorViewHolder;
-import com.foobnix.ui2.fast.FastScroller;
 
 import java.util.Locale;
 
-public class AuthorsAdapter2 extends AppRecycleAdapter<String, AuthorViewHolder> implements FastScroller.SectionIndexer {
+public class AuthorsAdapter2 extends AppRecycleAdapter<String, AuthorsAdapter2.AuthorViewHolder> implements FastScroller.SectionIndexer {
 
     public class AuthorViewHolder extends RecyclerView.ViewHolder {
         public TextView letter, text;

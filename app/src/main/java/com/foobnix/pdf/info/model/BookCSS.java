@@ -19,8 +19,8 @@ import com.foobnix.model.AppState;
 import com.foobnix.pdf.info.AppsConfig;
 import com.foobnix.pdf.info.ExtUtils;
 import com.foobnix.pdf.info.wrapper.MagicHelper;
-import com.foobnix.ui2.AppDB;
-import com.foobnix.ui2.FileMetaCore;
+import com.foobnix.comicui.AppDB;
+import com.foobnix.comicui.FileMetaCore;
 
 import org.ebookdroid.LibreraApp;
 import org.ebookdroid.common.settings.books.SharedBooks;

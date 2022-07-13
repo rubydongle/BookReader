@@ -1,4 +1,4 @@
-package com.foobnix.ui2;
+package com.foobnix.comicui;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -36,6 +36,14 @@ import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.Safe;
 import com.foobnix.android.utils.StringDB;
 import com.foobnix.android.utils.TxtUtils;
+import com.foobnix.comicui.adapter.TabsAdapter2;
+import com.foobnix.comicui.fragment.BookmarksFragment2;
+import com.foobnix.comicui.fragment.BrowseFragment2;
+import com.foobnix.comicui.fragment.OpdsFragment2;
+import com.foobnix.comicui.fragment.PrefFragment2;
+import com.foobnix.comicui.fragment.RecentFragment2;
+import com.foobnix.comicui.fragment.SearchFragment2;
+import com.foobnix.comicui.fragment.UIFragment;
 import com.foobnix.drive.GFile;
 import com.foobnix.ext.CacheZipUtils.CacheDir;
 import com.foobnix.model.AppProfile;
@@ -63,14 +71,6 @@ import com.foobnix.pdf.search.activity.msg.MessegeBrightness;
 import com.foobnix.pdf.search.activity.msg.MsgCloseMainTabs;
 import com.foobnix.pdf.search.view.CloseAppDialog;
 import com.foobnix.sys.TempHolder;
-import com.foobnix.ui2.adapter.TabsAdapter2;
-import com.foobnix.ui2.fragment.BookmarksFragment2;
-import com.foobnix.ui2.fragment.BrowseFragment2;
-import com.foobnix.ui2.fragment.OpdsFragment2;
-import com.foobnix.ui2.fragment.PrefFragment2;
-import com.foobnix.ui2.fragment.RecentFragment2;
-import com.foobnix.ui2.fragment.SearchFragment2;
-import com.foobnix.ui2.fragment.UIFragment;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 
 import org.ebookdroid.common.settings.books.SharedBooks;
@@ -88,7 +88,7 @@ import test.SvgActivity;
 
 
 @SuppressLint("NewApi")
-public class MainTabs2 extends AdsFragmentActivity {
+public class MainActivity extends AdsFragmentActivity {
     public static final int REQUEST_CODE_ADD_RESOURCE = 123;
     public static final String EXTRA_EXIT = "EXTRA_EXIT";
     public static final String EXTRA_SHOW_TABS = "EXTRA_SHOW_TABS";
@@ -117,7 +117,7 @@ public class MainTabs2 extends AdsFragmentActivity {
             TempHolder.get().currentTab = pos;
 
             LOG.d("onPageSelected", uiFragment);
-            Apps.accessibilityText(MainTabs2.this, adapter.getPageTitle(pos).toString() + " " + getString(R.string.tab_selected));
+            Apps.accessibilityText(MainActivity.this, adapter.getPageTitle(pos).toString() + " " + getString(R.string.tab_selected));
 
 
         }
@@ -199,9 +199,9 @@ public class MainTabs2 extends AdsFragmentActivity {
     }
 
     public static void startActivity(Activity c, int tab) {
-        final Intent intent = new Intent(c, MainTabs2.class);
-        intent.putExtra(MainTabs2.EXTRA_SHOW_TABS, true);
-        intent.putExtra(MainTabs2.EXTRA_PAGE_NUMBER, tab);
+        final Intent intent = new Intent(c, MainActivity.class);
+        intent.putExtra(MainActivity.EXTRA_SHOW_TABS, true);
+        intent.putExtra(MainActivity.EXTRA_PAGE_NUMBER, tab);
         intent.putExtra(PasswordDialog.EXTRA_APP_PASSWORD, c.getIntent().getStringExtra(PasswordDialog.EXTRA_APP_PASSWORD));
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         c.startActivity(intent);
@@ -229,7 +229,7 @@ public class MainTabs2 extends AdsFragmentActivity {
             LOG.d("CloudRail response", intent);
 
             Intent intent1 = new Intent(UIFragment.INTENT_TINT_CHANGE)//
-                    .putExtra(MainTabs2.EXTRA_PAGE_NUMBER, UITab.getCurrentTabIndex(UITab.BrowseFragment));//
+                    .putExtra(MainActivity.EXTRA_PAGE_NUMBER, UITab.getCurrentTabIndex(UITab.BrowseFragment));//
 
             LocalBroadcastManager.getInstance(this).sendBroadcast(intent1);
 
@@ -276,7 +276,7 @@ public class MainTabs2 extends AdsFragmentActivity {
                         AppSP.get().isEnableSync = true;
                         Toast.makeText(this, R.string.success, Toast.LENGTH_SHORT).show();
                         EventBus.getDefault().post(new GDriveSycnEvent());
-                        GFile.runSyncService(MainTabs2.this);
+                        GFile.runSyncService(MainActivity.this);
 
                         swipeRefreshLayout.setEnabled(isPullToRefreshEnable());
 
@@ -301,7 +301,7 @@ public class MainTabs2 extends AdsFragmentActivity {
     }
 
     public boolean isPullToRefreshEnable() {
-        return isPullToRefreshEnable(MainTabs2.this, swipeRefreshLayout);
+        return isPullToRefreshEnable(MainActivity.this, swipeRefreshLayout);
     }
 
     @Override
@@ -379,7 +379,7 @@ public class MainTabs2 extends AdsFragmentActivity {
         fab.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Dialogs.showSyncLOGDialog(MainTabs2.this);
+                Dialogs.showSyncLOGDialog(MainActivity.this);
             }
         });
         fab.setBackgroundResource(R.drawable.bg_circular);
@@ -393,7 +393,7 @@ public class MainTabs2 extends AdsFragmentActivity {
             @Override
             public void onRefresh() {
                 swipeRefreshLayout.setRefreshing(false);
-                GFile.runSyncService(MainTabs2.this, true);
+                GFile.runSyncService(MainActivity.this, true);
             }
         });
 
@@ -426,7 +426,7 @@ public class MainTabs2 extends AdsFragmentActivity {
 
         } catch (Exception e) {
             LOG.e(e);
-            Toast.makeText(MainTabs2.this, R.string.msg_unexpected_error, Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, R.string.msg_unexpected_error, Toast.LENGTH_LONG).show();
             tabFragments.add(new SearchFragment2());
             tabFragments.add(new BrowseFragment2());
             tabFragments.add(new RecentFragment2());
@@ -518,7 +518,7 @@ public class MainTabs2 extends AdsFragmentActivity {
                 try {
                     tabFragments.get(pager.getCurrentItem()).onSelectFragment();
 
-                    if (isPullToRefreshEnable(MainTabs2.this, swipeRefreshLayout)) {
+                    if (isPullToRefreshEnable(MainActivity.this, swipeRefreshLayout)) {
                         swipeRefreshLayout.setEnabled(true);
                         swipeRefreshLayout.setColorSchemeColors(TintUtil.color);
 
@@ -626,7 +626,7 @@ public class MainTabs2 extends AdsFragmentActivity {
 
             Safe.run(() -> {
                 boolean isEasyMode = HorizontalViewActivity.class.getSimpleName().equals(AppSP.get().lastClosedActivity);
-                Intent intent = new Intent(MainTabs2.this, isEasyMode ? HorizontalViewActivity.class : VerticalViewActivity.class);
+                Intent intent = new Intent(MainActivity.this, isEasyMode ? HorizontalViewActivity.class : VerticalViewActivity.class);
                 intent.putExtra(PasswordDialog.EXTRA_APP_PASSWORD, getIntent().getStringExtra(PasswordDialog.EXTRA_APP_PASSWORD));
                 intent.setData(Uri.fromFile(new File(AppSP.get().lastBookPath)));
                 startActivity(intent);
@@ -645,12 +645,12 @@ public class MainTabs2 extends AdsFragmentActivity {
                 public void run() {
                     LOG.d("Open AppSP.get().lastBookPath", saveMode);
                     if (HorizontalViewActivity.class.getSimpleName().equals(saveMode)) {
-                        Intent intent = new Intent(MainTabs2.this, HorizontalViewActivity.class);
+                        Intent intent = new Intent(MainActivity.this, HorizontalViewActivity.class);
                         intent.setData(Uri.fromFile(new File(AppSP.get().lastBookPath)));
                         startActivity(intent);
                         LOG.d("Start lastA", saveMode);
                     } else if (VerticalViewActivity.class.getSimpleName().equals(saveMode)) {
-                        Intent intent = new Intent(MainTabs2.this, VerticalViewActivity.class);
+                        Intent intent = new Intent(MainActivity.this, VerticalViewActivity.class);
                         intent.setData(Uri.fromFile(new File(AppSP.get().lastBookPath)));
                         startActivity(intent);
                         LOG.d("Start lastA", saveMode);
@@ -666,7 +666,7 @@ public class MainTabs2 extends AdsFragmentActivity {
         if (!AppState.get().isEnableAccessibility && once) {
             once = false;
             handler.postDelayed(() -> {
-                Apps.accessibilityText(MainTabs2.this, getString(R.string.welcome_accessibility));
+                Apps.accessibilityText(MainActivity.this, getString(R.string.welcome_accessibility));
             }, 5000);
         }
     }

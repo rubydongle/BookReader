@@ -18,7 +18,7 @@ import com.foobnix.model.AppState;
 import com.foobnix.pdf.info.IMG;
 import com.foobnix.pdf.info.R;
 import com.foobnix.sys.ImageExtractor;
-import com.foobnix.ui2.AppDB;
+import com.foobnix.comicui.AppDB;
 
 import org.ebookdroid.LibreraApp;
 

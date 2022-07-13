@@ -27,7 +27,7 @@ import com.foobnix.pdf.info.Android6;
 import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.model.BookCSS;
 import com.foobnix.sys.TempHolder;
-import com.foobnix.ui2.AppDB;
+import com.foobnix.comicui.AppDB;
 
 import org.ebookdroid.LibreraApp;
 import org.librera.LinkedJSONObject;

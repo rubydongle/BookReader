@@ -24,7 +24,7 @@ import com.foobnix.dao2.FileMeta;
 import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.Urls;
 import com.foobnix.pdf.info.wrapper.DocumentController;
-import com.foobnix.ui2.FileMetaCore;
+import com.foobnix.comicui.FileMetaCore;
 
 import java.io.File;
 

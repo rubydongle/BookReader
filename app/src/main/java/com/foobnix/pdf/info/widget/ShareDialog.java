@@ -46,9 +46,9 @@ import com.foobnix.pdf.info.wrapper.UITab;
 import com.foobnix.pdf.search.activity.HorizontalViewActivity;
 import com.foobnix.pdf.search.activity.msg.UpdateAllFragments;
 import com.foobnix.sys.TempHolder;
-import com.foobnix.ui2.AppDB;
-import com.foobnix.ui2.FileMetaCore;
-import com.foobnix.ui2.MainTabs2;
+import com.foobnix.comicui.AppDB;
+import com.foobnix.comicui.FileMetaCore;
+import com.foobnix.comicui.MainActivity;
 
 import org.ebookdroid.BookType;
 import org.ebookdroid.common.settings.books.SharedBooks;
@@ -239,9 +239,9 @@ public class ShareDialog {
             return;
         }
         final boolean isPDF = BookType.PDF.is(file.getPath());
-        final boolean isLibrary = false;// a instanceof MainTabs2 ? false :
+        final boolean isLibrary = false;// a instanceof MainActivity ? false :
         // true;
-        final boolean isMainTabs = a instanceof MainTabs2;
+        final boolean isMainTabs = a instanceof MainActivity;
 
         List<String> items = new ArrayList<String>();
 
@@ -354,7 +354,7 @@ public class ShareDialog {
                 }
                 if (isLibrary && which == i++) {
                     a.finish();
-                    MainTabs2.startActivity(a, UITab.getCurrentTabIndex(UITab.SearchFragment));
+                    MainActivity.startActivity(a, UITab.getCurrentTabIndex(UITab.SearchFragment));
                 }
 
                 if (dc != null && (a instanceof HorizontalViewActivity || dc.isMusicianMode()) && which == i++) {

@@ -45,8 +45,8 @@ import com.foobnix.pdf.info.model.BookCSS;
 import com.foobnix.pdf.info.wrapper.MagicHelper;
 import com.foobnix.pdf.search.activity.HorizontalViewActivity;
 import com.foobnix.pdf.search.activity.PageImageState;
-import com.foobnix.ui2.AppDB;
-import com.foobnix.ui2.FileMetaCore;
+import com.foobnix.comicui.AppDB;
+import com.foobnix.comicui.FileMetaCore;
 
 import org.ebookdroid.BookType;
 import org.ebookdroid.LibreraApp;

@@ -1,4 +1,4 @@
-package com.foobnix.ui2;
+package com.foobnix.comicui;
 
 public class TagMeta {
     public String id;

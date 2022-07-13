@@ -25,7 +25,7 @@ import com.foobnix.pdf.info.wrapper.DocumentController;
 import com.foobnix.pdf.info.wrapper.UITab;
 import com.foobnix.tts.TTSEngine;
 import com.foobnix.tts.TTSNotification;
-import com.foobnix.ui2.MainTabs2;
+import com.foobnix.comicui.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -153,7 +153,7 @@ public class CloseAppDialog {
 
                         @Override
                         public void run() {
-                            MainTabs2.startActivity(a, UITab.getCurrentTabIndex(UITab.SearchFragment));
+                            MainActivity.startActivity(a, UITab.getCurrentTabIndex(UITab.SearchFragment));
                         }
                     });
                 } else if (which == i++) {
@@ -164,7 +164,7 @@ public class CloseAppDialog {
 
                         @Override
                         public void run() {
-                            MainTabs2.closeApp(a);
+                            MainActivity.closeApp(a);
                         }
                     });
 

@@ -43,12 +43,12 @@ import com.foobnix.pdf.info.view.ScaledImageView;
 import com.foobnix.pdf.search.activity.msg.NotifyAllFragments;
 import com.foobnix.pdf.search.view.AsyncProgressResultToastTask;
 import com.foobnix.sys.ImageExtractor;
-import com.foobnix.ui2.AppDB;
-import com.foobnix.ui2.AppDB.SEARCH_IN;
-import com.foobnix.ui2.AppDB.SORT_BY;
-import com.foobnix.ui2.FileMetaCore;
-import com.foobnix.ui2.adapter.DefaultListeners;
-import com.foobnix.ui2.adapter.FileMetaAdapter;
+import com.foobnix.comicui.AppDB;
+import com.foobnix.comicui.AppDB.SEARCH_IN;
+import com.foobnix.comicui.AppDB.SORT_BY;
+import com.foobnix.comicui.FileMetaCore;
+import com.foobnix.comicui.adapter.DefaultListeners;
+import com.foobnix.comicui.adapter.FileMetaAdapter;
 
 import org.ebookdroid.BookType;
 import org.ebookdroid.LibreraApp;

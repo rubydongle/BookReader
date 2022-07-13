@@ -5,9 +5,9 @@ import com.foobnix.dao2.FileMeta;
 import com.foobnix.model.AppState;
 import com.foobnix.pdf.info.ExtUtils;
 import com.foobnix.pdf.info.Playlists;
-import com.foobnix.ui2.AppDB;
-import com.foobnix.ui2.FileMetaCore;
-import com.foobnix.ui2.adapter.FileMetaAdapter;
+import com.foobnix.comicui.AppDB;
+import com.foobnix.comicui.FileMetaCore;
+import com.foobnix.comicui.adapter.FileMetaAdapter;
 
 import java.io.File;
 import java.io.FileFilter;

@@ -1,4 +1,4 @@
-package com.foobnix.ui2.fragment;
+package com.foobnix.comicui.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.ResultResponse;
 import com.foobnix.android.utils.TxtUtils;
+import com.foobnix.comicui.AppDB;
+import com.foobnix.comicui.adapter.FileMetaAdapter;
 import com.foobnix.dao2.FileMeta;
 import com.foobnix.ext.CacheZipUtils;
 import com.foobnix.model.AppData;
@@ -25,8 +27,6 @@ import com.foobnix.pdf.info.TintUtil;
 import com.foobnix.pdf.info.view.AlertDialogs;
 import com.foobnix.pdf.info.view.MyPopupMenu;
 import com.foobnix.pdf.info.wrapper.PopupHelper;
-import com.foobnix.ui2.AppDB;
-import com.foobnix.ui2.adapter.FileMetaAdapter;
 
 import java.io.File;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package com.foobnix.ui2;
+package com.foobnix.comicui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,8 +8,8 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.cloudrail.si.CloudRail;
 import com.foobnix.android.utils.LOG;
+import com.foobnix.comicui.fragment.UIFragment;
 import com.foobnix.pdf.info.wrapper.UITab;
-import com.foobnix.ui2.fragment.UIFragment;
 
 public class CloudrailActivity extends Activity {
     public static final int REQUEST_CODE_ADD_RESOURCE = 123;
@@ -35,7 +35,7 @@ public class CloudrailActivity extends Activity {
             LOG.d("CloudRail response", intent);
 
             Intent intent1 = new Intent(UIFragment.INTENT_TINT_CHANGE)//
-                    .putExtra(MainTabs2.EXTRA_PAGE_NUMBER, UITab.getCurrentTabIndex(UITab.BrowseFragment));//
+                    .putExtra(MainActivity.EXTRA_PAGE_NUMBER, UITab.getCurrentTabIndex(UITab.BrowseFragment));//
 
             LocalBroadcastManager.getInstance(this).sendBroadcast(intent1);
         }

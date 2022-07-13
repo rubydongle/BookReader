@@ -1,4 +1,4 @@
-package com.foobnix.ui2.adapter;
+package com.foobnix.comicui.adapter;
 
 import android.os.Parcelable;
 
@@ -6,7 +6,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.foobnix.ui2.fragment.UIFragment;
+
+import com.foobnix.comicui.fragment.UIFragment;
 
 import java.util.List;
 

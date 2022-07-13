@@ -1,4 +1,4 @@
-package com.foobnix.ui2.fragment;
+package com.foobnix.comicui.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.foobnix.android.utils.ResultResponse;
 import com.foobnix.android.utils.TxtUtils;
+import com.foobnix.comicui.AppDB;
+import com.foobnix.comicui.adapter.FileMetaAdapter;
 import com.foobnix.dao2.FileMeta;
 import com.foobnix.model.AppData;
 import com.foobnix.model.AppState;
@@ -27,9 +29,6 @@ import com.foobnix.pdf.info.view.DialogsPlaylist;
 import com.foobnix.pdf.info.view.MyPopupMenu;
 import com.foobnix.pdf.info.wrapper.PopupHelper;
 import com.foobnix.pdf.search.activity.msg.NotifyAllFragments;
-import com.foobnix.ui2.AppDB;
-import com.foobnix.ui2.AppDB.SEARCH_IN;
-import com.foobnix.ui2.adapter.FileMetaAdapter;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -202,7 +201,7 @@ public class FavoritesFragment2 extends UIFragment<FileMeta> {
 
         List<FileMeta> all = new ArrayList<FileMeta>();
 
-        List<String> tags = AppDB.get().getAll(SEARCH_IN.TAGS);
+        List<String> tags = AppDB.get().getAll(AppDB.SEARCH_IN.TAGS);
         if (TxtUtils.isListNotEmpty(tags)) {
             for (String tag : tags) {
                 FileMeta m = new FileMeta("");

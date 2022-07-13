@@ -42,7 +42,7 @@ import com.foobnix.pdf.info.ADS;
 import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.TintUtil;
 import com.foobnix.pdf.info.model.BookCSS;
-import com.foobnix.ui2.MainTabs2;
+import com.foobnix.comicui.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +57,7 @@ public class MyPopupMenu {
     public MyPopupMenu(Context c, View anchor) {
         this.c = c;
         this.anchor = anchor;
-        isTabsActivity = c instanceof MainTabs2;
+        isTabsActivity = c instanceof MainActivity;
 
 
     }
@@ -65,7 +65,7 @@ public class MyPopupMenu {
     public MyPopupMenu(View anchor) {
         this.c = anchor.getContext();
         this.anchor = anchor;
-        isTabsActivity = c instanceof MainTabs2;
+        isTabsActivity = c instanceof MainActivity;
 
 
     }
@@ -76,7 +76,7 @@ public class MyPopupMenu {
 
     public void show(int pos, boolean isLong) {
         try {
-            if (c instanceof MainTabs2) {
+            if (c instanceof MainActivity) {
                 ADS.hideAdsTemp((Activity) c);
             }
         } catch (Exception e) {

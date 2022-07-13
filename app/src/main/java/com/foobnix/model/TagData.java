@@ -4,7 +4,7 @@ import com.foobnix.android.utils.IO;
 import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.StringDB;
 import com.foobnix.dao2.FileMeta;
-import com.foobnix.ui2.AppDB;
+import com.foobnix.comicui.AppDB;
 
 import org.librera.JSONException;
 import org.librera.LinkedJSONObject;

@@ -9,9 +9,9 @@ import com.foobnix.pdf.info.ExtUtils;
 import com.foobnix.pdf.info.FileMetaComparators;
 import com.foobnix.pdf.info.io.SearchCore;
 import com.foobnix.pdf.info.widget.RecentUpates;
-import com.foobnix.ui2.AppDB;
-import com.foobnix.ui2.FileMetaCore;
-import com.foobnix.ui2.adapter.FileMetaAdapter;
+import com.foobnix.comicui.AppDB;
+import com.foobnix.comicui.FileMetaCore;
+import com.foobnix.comicui.adapter.FileMetaAdapter;
 
 import org.ebookdroid.common.settings.books.SharedBooks;
 import org.librera.JSONArray;

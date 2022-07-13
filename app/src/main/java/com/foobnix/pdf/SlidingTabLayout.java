@@ -26,8 +26,8 @@ import com.foobnix.model.AppSP;
 import com.foobnix.model.AppState;
 import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.TintUtil;
-import com.foobnix.ui2.MainTabs2;
-import com.foobnix.ui2.adapter.TabsAdapter2;
+import com.foobnix.comicui.MainActivity;
+import com.foobnix.comicui.adapter.TabsAdapter2;
 
 /**
  * To be used with ViewPager to provide a tab indicator component which give
@@ -142,7 +142,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
                 }
                 case MotionEvent.ACTION_UP:
                 case MotionEvent.ACTION_CANCEL: {
-                    if (MainTabs2.isPullToRefreshEnable(getContext(), swipeRefreshLayout)) {
+                    if (MainActivity.isPullToRefreshEnable(getContext(), swipeRefreshLayout)) {
                         swipeRefreshLayout.setEnabled(true);
                     }
 

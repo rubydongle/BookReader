@@ -1,4 +1,4 @@
-package com.foobnix.ui2.fragment;
+package com.foobnix.comicui.fragment;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -45,10 +45,15 @@ import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.ResultResponse;
 import com.foobnix.android.utils.StringDB;
 import com.foobnix.android.utils.TxtUtils;
+import com.foobnix.comicui.AppDB;
+import com.foobnix.comicui.FileMetaCore;
+import com.foobnix.comicui.MainActivity;
+import com.foobnix.comicui.adapter.DefaultListeners;
+import com.foobnix.comicui.adapter.FileMetaAdapter;
+import com.foobnix.comicui.fast.FastScrollRecyclerView;
 import com.foobnix.dao2.FileMeta;
 import com.foobnix.drive.GFile;
 import com.foobnix.model.AppData;
-import com.foobnix.model.AppProfile;
 import com.foobnix.model.AppState;
 import com.foobnix.pdf.info.AppsConfig;
 import com.foobnix.pdf.info.Clouds;
@@ -67,12 +72,6 @@ import com.foobnix.pdf.info.wrapper.PopupHelper;
 import com.foobnix.pdf.search.view.AsyncProgressResultToastTask;
 import com.foobnix.pdf.search.view.AsyncProgressTask;
 import com.foobnix.sys.TempHolder;
-import com.foobnix.ui2.AppDB;
-import com.foobnix.ui2.FileMetaCore;
-import com.foobnix.ui2.MainTabs2;
-import com.foobnix.ui2.adapter.DefaultListeners;
-import com.foobnix.ui2.adapter.FileMetaAdapter;
-import com.foobnix.ui2.fast.FastScrollRecyclerView;
 
 import org.ebookdroid.BookType;
 import org.ebookdroid.droids.FolderContext;
@@ -167,7 +166,7 @@ public class BrowseFragment2 extends UIFragment<FileMeta> {
         TintUtil.setBackgroundFillColor(pathContainer, TintUtil.color);
         TintUtil.setBackgroundFillColor(onClose, TintUtil.color);
         TintUtil.setBackgroundFillColor(onAction, TintUtil.color);
-        TintUtil.setTintImageWithAlpha(openAsbookImage, getActivity() instanceof MainTabs2 ? TintUtil.getColorInDayNighth() : TintUtil.getColorInDayNighthBook());
+        TintUtil.setTintImageWithAlpha(openAsbookImage, getActivity() instanceof MainActivity ? TintUtil.getColorInDayNighth() : TintUtil.getColorInDayNighthBook());
 
     }
 
@@ -183,7 +182,7 @@ public class BrowseFragment2 extends UIFragment<FileMeta> {
         onClose = view.findViewById(R.id.onClose);
         openAsBook = view.findViewById(R.id.openAsBook);
         openAsbookImage = (ImageView) view.findViewById(R.id.openAsbookImage);
-        TintUtil.setTintImageWithAlpha(openAsbookImage, getActivity() instanceof MainTabs2 ? TintUtil.getColorInDayNighth() : TintUtil.getColorInDayNighthBook());
+        TintUtil.setTintImageWithAlpha(openAsbookImage, getActivity() instanceof MainActivity ? TintUtil.getColorInDayNighth() : TintUtil.getColorInDayNighthBook());
 
         starIcon = (ImageView) view.findViewById(R.id.starIcon);
         starIconDir = (ImageView) view.findViewById(R.id.starIconDir);
@@ -373,7 +372,7 @@ public class BrowseFragment2 extends UIFragment<FileMeta> {
 
                 // resources
 
-                if (Build.VERSION.SDK_INT >= 21 && getActivity() instanceof MainTabs2) {
+                if (Build.VERSION.SDK_INT >= 21 && getActivity() instanceof MainActivity) {
                     List<String> safs = StringDB.asList(BookCSS.get().pathSAF);
 
                     for (final String saf : safs) {
@@ -433,7 +432,7 @@ public class BrowseFragment2 extends UIFragment<FileMeta> {
 
                 }
 
-                if (Build.VERSION.SDK_INT >= 21 && getActivity() instanceof MainTabs2) {
+                if (Build.VERSION.SDK_INT >= 21 && getActivity() instanceof MainActivity) {
                     menu.getMenu().add(R.string.add_resource).setOnMenuItemClickListener(new OnMenuItemClickListener() {
 
                         @Override
@@ -446,7 +445,7 @@ public class BrowseFragment2 extends UIFragment<FileMeta> {
                                     | Intent.FLAG_GRANT_WRITE_URI_PERMISSION//
                             );
 
-                            getActivity().startActivityForResult(intent, MainTabs2.REQUEST_CODE_ADD_RESOURCE);
+                            getActivity().startActivityForResult(intent, MainActivity.REQUEST_CODE_ADD_RESOURCE);
                             return true;
                         }
                     }).setIcon(R.drawable.glyphicons_145_folder_open);
@@ -1232,7 +1231,7 @@ public class BrowseFragment2 extends UIFragment<FileMeta> {
         } else {
             starIconDir.setImageResource(R.drawable.star_2);
         }
-        TintUtil.setTintImageWithAlpha(starIconDir, getActivity() instanceof MainTabs2 ? TintUtil.getColorInDayNighth() : TintUtil.getColorInDayNighthBook());
+        TintUtil.setTintImageWithAlpha(starIconDir, getActivity() instanceof MainActivity ? TintUtil.getColorInDayNighth() : TintUtil.getColorInDayNighthBook());
 
         starIconDir.setOnClickListener(new OnClickListener() {
 
@@ -1248,7 +1247,7 @@ public class BrowseFragment2 extends UIFragment<FileMeta> {
                 } else {
                     starIconDir.setImageResource(R.drawable.star_2);
                 }
-                TintUtil.setTintImageWithAlpha(starIconDir, getActivity() instanceof MainTabs2 ? TintUtil.getColorInDayNighth() : TintUtil.getColorInDayNighthBook());
+                TintUtil.setTintImageWithAlpha(starIconDir, getActivity() instanceof MainActivity ? TintUtil.getColorInDayNighth() : TintUtil.getColorInDayNighthBook());
             }
         });
 

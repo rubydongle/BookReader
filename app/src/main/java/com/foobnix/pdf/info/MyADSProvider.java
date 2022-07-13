@@ -5,7 +5,7 @@ import android.os.Handler;
 
 import com.foobnix.android.utils.Apps;
 import com.foobnix.android.utils.LOG;
-import com.foobnix.ui2.MainTabs2;
+import com.foobnix.comicui.MainActivity;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
@@ -85,7 +85,7 @@ public class MyADSProvider {
             }
         }
 
-        if(!AppsConfig.ADS_ON_PAGE && !(a instanceof MainTabs2)) {
+        if(!AppsConfig.ADS_ON_PAGE && !(a instanceof MainActivity)) {
             LOG.d("Skip ads in the book");
             return;
         }

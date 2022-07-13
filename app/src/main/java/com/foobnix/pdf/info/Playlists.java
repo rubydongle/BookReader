@@ -5,7 +5,7 @@ import com.foobnix.android.utils.TxtUtils;
 import com.foobnix.dao2.FileMeta;
 import com.foobnix.model.AppProfile;
 import com.foobnix.model.MyPath;
-import com.foobnix.ui2.adapter.FileMetaAdapter;
+import com.foobnix.comicui.adapter.FileMetaAdapter;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

@@ -1,4 +1,4 @@
-package com.foobnix.ui2.adapter;
+package com.foobnix.comicui.adapter;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -29,6 +29,10 @@ import com.foobnix.android.utils.ResultResponse;
 import com.foobnix.android.utils.ResultResponse2;
 import com.foobnix.android.utils.StringDB;
 import com.foobnix.android.utils.TxtUtils;
+import com.foobnix.comicui.AppDB;
+import com.foobnix.comicui.AppRecycleAdapter;
+import com.foobnix.comicui.MainActivity;
+import com.foobnix.comicui.fast.FastScroller;
 import com.foobnix.dao2.FileMeta;
 import com.foobnix.model.AppData;
 import com.foobnix.model.AppState;
@@ -41,20 +45,13 @@ import com.foobnix.pdf.info.TintUtil;
 import com.foobnix.pdf.info.view.Dialogs;
 import com.foobnix.pdf.info.view.MyPopupMenu;
 import com.foobnix.pdf.info.wrapper.PopupHelper;
-import com.foobnix.ui2.AppDB;
-import com.foobnix.ui2.AppDB.SEARCH_IN;
-import com.foobnix.ui2.AppDB.SORT_BY;
-import com.foobnix.ui2.AppRecycleAdapter;
-import com.foobnix.ui2.MainTabs2;
-import com.foobnix.ui2.adapter.AuthorsAdapter2.AuthorViewHolder;
-import com.foobnix.ui2.fast.FastScroller;
 
 import java.io.File;
 import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
-public class FileMetaAdapter extends AppRecycleAdapter<FileMeta, RecyclerView.ViewHolder> implements FastScroller.SectionIndexer {
+public class FileMetaAdapter extends AppRecycleAdapter<FileMeta, ViewHolder> implements FastScroller.SectionIndexer {
 
     public static final int DISPLAY_TYPE_FILE = 2;
     public static final int DISPLAY_TYPE_DIRECTORY = 3;
@@ -94,7 +91,7 @@ public class FileMetaAdapter extends AppRecycleAdapter<FileMeta, RecyclerView.Vi
 
 
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView;
 
         if (viewType == DISPALY_TYPE_SERIES) {
@@ -145,7 +142,7 @@ public class FileMetaAdapter extends AppRecycleAdapter<FileMeta, RecyclerView.Vi
             } else {
                 itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.browse_item_grid, parent, false);
                 if (tempValue == TEMP_VALUE_STAR_GRID_ITEM || tempValue == TEMP_VALUE_SERIES) {
-                    itemView.getLayoutParams().width = ViewGroup.LayoutParams.WRAP_CONTENT;
+                    itemView.getLayoutParams().width = LayoutParams.WRAP_CONTENT;
                     // itemView.getLayoutParams().height = itemView.getLayoutParams().width * 2;
                 }
             }
@@ -168,7 +165,7 @@ public class FileMetaAdapter extends AppRecycleAdapter<FileMeta, RecyclerView.Vi
     }
 
     @Override
-    public void onBindViewHolder(final RecyclerView.ViewHolder holderAll, final int position) {
+    public void onBindViewHolder(final ViewHolder holderAll, final int position) {
         final FileMeta fileMeta = getItem(position);
 
 
@@ -305,10 +302,10 @@ public class FileMetaAdapter extends AppRecycleAdapter<FileMeta, RecyclerView.Vi
                 TintUtil.setNoTintImage(holder.image);
             } else {
                 holder.image.setImageResource(R.drawable.glyphicons_441_folder_closed);
-                TintUtil.setTintImageWithAlpha(holder.image, holder.image.getContext() instanceof MainTabs2 ? TintUtil.getColorInDayNighth() : TintUtil.getColorInDayNighthBook());
+                TintUtil.setTintImageWithAlpha(holder.image, holder.image.getContext() instanceof MainActivity ? TintUtil.getColorInDayNighth() : TintUtil.getColorInDayNighthBook());
             }
 
-            TintUtil.setTintImageWithAlpha(holder.starIcon, holder.starIcon.getContext() instanceof MainTabs2 ? TintUtil.getColorInDayNighth() : TintUtil.getColorInDayNighthBook());
+            TintUtil.setTintImageWithAlpha(holder.starIcon, holder.starIcon.getContext() instanceof MainActivity ? TintUtil.getColorInDayNighth() : TintUtil.getColorInDayNighthBook());
 
 
             if (onStarClickListener != null) {
@@ -429,7 +426,7 @@ public class FileMetaAdapter extends AppRecycleAdapter<FileMeta, RecyclerView.Vi
                             return false;
                         }
                     });
-                    List<String> tags = AppDB.get().getAll(SEARCH_IN.TAGS);
+                    List<String> tags = AppDB.get().getAll(AppDB.SEARCH_IN.TAGS);
                     Collections.sort(tags);
                     for (final String tag : tags) {
                         int count = AppDB.get().getAllWithTag(tag).size();
@@ -445,7 +442,7 @@ public class FileMetaAdapter extends AppRecycleAdapter<FileMeta, RecyclerView.Vi
                                 TxtUtils.underline(holder.starredName, nameName);
 
                                 adapter.getItemsList().clear();
-                                List<FileMeta> allTags = AppDB.get().searchBy("@tags " + tag, SORT_BY.FILE_NAME, false);
+                                List<FileMeta> allTags = AppDB.get().searchBy("@tags " + tag, AppDB.SORT_BY.FILE_NAME, false);
                                 adapter.getItemsList().addAll(allTags);
                                 adapter.notifyDataSetChanged();
 
@@ -498,7 +495,7 @@ public class FileMetaAdapter extends AppRecycleAdapter<FileMeta, RecyclerView.Vi
                 holder.starredNameIcon.setImageResource(R.drawable.glyphicons_67_tags);
                 TintUtil.setTintImageNoAlpha(holder.starredNameIcon, Color.WHITE);
 
-                List<FileMeta> allTags = AppDB.get().searchBy("@tags " + AppState.get().recentTag, SORT_BY.FILE_NAME, false);
+                List<FileMeta> allTags = AppDB.get().searchBy("@tags " + AppState.get().recentTag, AppDB.SORT_BY.FILE_NAME, false);
                 adapter.getItemsList().addAll(allTags);
 
                 TxtUtils.underline(holder.starredName, AppState.get().recentTag + " (" + allTags.size() + ")");
@@ -507,8 +504,8 @@ public class FileMetaAdapter extends AppRecycleAdapter<FileMeta, RecyclerView.Vi
             }
             adapter.notifyDataSetChanged();
 
-        } else if (holderAll instanceof AuthorViewHolder) {
-            AuthorViewHolder aHolder = (AuthorViewHolder) holderAll;
+        } else if (holderAll instanceof AuthorsAdapter2.AuthorViewHolder) {
+            AuthorsAdapter2.AuthorViewHolder aHolder = (AuthorsAdapter2.AuthorViewHolder) holderAll;
             final String sequence = fileMeta.getSequence().replace(",", "");
             aHolder.onBindViewHolder(aHolder, sequence);
             aHolder.parent.setOnClickListener(new OnClickListener() {
@@ -703,7 +700,7 @@ public class FileMetaAdapter extends AppRecycleAdapter<FileMeta, RecyclerView.Vi
         } else {
             holder.star.setImageResource(R.drawable.star_1);
         }
-        TintUtil.setTintImageWithAlpha(holder.star, holder.parent.getContext() instanceof MainTabs2 ? TintUtil.getColorInDayNighth() : TintUtil.getColorInDayNighthBook());
+        TintUtil.setTintImageWithAlpha(holder.star, holder.parent.getContext() instanceof MainActivity ? TintUtil.getColorInDayNighth() : TintUtil.getColorInDayNighthBook());
 
         if (onStarClickListener != null) {
             holder.star.setContentDescription(holder.c.getString(fileMeta.getIsStar()!=null && fileMeta.getIsStar() ? R.string.remove_from_favorites : R.string.add_to_favorites));
@@ -839,7 +836,7 @@ public class FileMetaAdapter extends AppRecycleAdapter<FileMeta, RecyclerView.Vi
             }
         }
 
-        TintUtil.setTintImageWithAlpha(holder.menu, holder.parent.getContext() instanceof MainTabs2 ? TintUtil.getColorInDayNighth() : TintUtil.getColorInDayNighthBook());
+        TintUtil.setTintImageWithAlpha(holder.menu, holder.parent.getContext() instanceof MainActivity ? TintUtil.getColorInDayNighth() : TintUtil.getColorInDayNighthBook());
 
         if (holder.remove != null) {
             holder.remove.setOnClickListener(new OnClickListener() {
@@ -972,7 +969,7 @@ public class FileMetaAdapter extends AppRecycleAdapter<FileMeta, RecyclerView.Vi
         this.onTagClickListner = onTagClickListner;
     }
 
-    public class ContextViewHolder extends RecyclerView.ViewHolder {
+    public class ContextViewHolder extends ViewHolder {
         final Context c;
         public View parent;
 

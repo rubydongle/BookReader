@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 
-import com.foobnix.ui2.MyContextWrapper;
+import com.foobnix.comicui.MyContextWrapper;
 
 public class TTSActivity extends Activity {
 

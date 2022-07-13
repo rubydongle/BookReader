@@ -56,8 +56,8 @@ import com.foobnix.pdf.search.activity.msg.UpdateAllFragments;
 import com.foobnix.pdf.search.view.AsyncProgressResultToastTask;
 import com.foobnix.pdf.search.view.AsyncProgressTask;
 import com.foobnix.sys.TempHolder;
-import com.foobnix.ui2.BooksService;
-import com.foobnix.ui2.MainTabs2;
+import com.foobnix.comicui.BooksService;
+import com.foobnix.comicui.MainActivity;
 
 import net.lingala.zip4j.exception.ZipException;
 
@@ -212,7 +212,7 @@ public class PrefDialogs {
                             AppProfile.clear();
                             //AppProfile.init(activity);
                             activity.finish();
-                            MainTabs2.startActivity(activity, TempHolder.get().currentTab);
+                            MainActivity.startActivity(activity, TempHolder.get().currentTab);
                         }
 
                     }

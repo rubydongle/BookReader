@@ -252,7 +252,7 @@ android {
             dimension "version"
             applicationId "comic.reader"
             manifestPlaceholders = [
-                    appName      : "Comic Reader",
+                    appName      : "rComic",
                     appIcon      : "@mipmap/icon_pdf_reader",
                     appRoundIcon : "@mipmap/launcher_epub_reader",
                     appGdriveKey : "961762082517-p6b2kqqimju6rlp314mu56lipvq2m68r.apps.googleusercontent.com",

@@ -25,9 +25,9 @@ import com.foobnix.pdf.info.model.BookCSS;
 import com.foobnix.pdf.info.wrapper.UITab;
 import com.foobnix.pdf.search.activity.msg.MessageSyncUpdateList;
 import com.foobnix.pdf.search.view.AsyncProgressTask;
-import com.foobnix.ui2.BooksService;
-import com.foobnix.ui2.FileMetaCore;
-import com.foobnix.ui2.MainTabs2;
+import com.foobnix.comicui.BooksService;
+import com.foobnix.comicui.FileMetaCore;
+import com.foobnix.comicui.MainActivity;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -656,7 +656,7 @@ public class Clouds {
             img.setImageResource(R.drawable.glyphicons_748_synchronization);
             //TintUtil.setTintImageNoAlpha(img, TintUtil.cloudSyncColor);
 
-            TintUtil.setTintImageWithAlpha(img, img.getContext() instanceof MainTabs2 ? TintUtil.getColorInDayNighth() : TintUtil.getColorInDayNighthBook());
+            TintUtil.setTintImageWithAlpha(img, img.getContext() instanceof MainActivity ? TintUtil.getColorInDayNighth() : TintUtil.getColorInDayNighthBook());
 
             return true;
         } else {

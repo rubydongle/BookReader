@@ -70,7 +70,7 @@ import com.foobnix.pdf.info.wrapper.DocumentController;
 import com.foobnix.pdf.search.activity.HorizontalModeController;
 import com.foobnix.pdf.search.activity.HorizontalViewActivity;
 import com.foobnix.sys.TempHolder;
-import com.foobnix.ui2.AppDB;
+import com.foobnix.comicui.AppDB;
 import com.foobnix.zipmanager.ZipDialog;
 
 import org.ebookdroid.BookType;

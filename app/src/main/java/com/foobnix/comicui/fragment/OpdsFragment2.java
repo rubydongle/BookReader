@@ -1,4 +1,4 @@
-package com.foobnix.ui2.fragment;
+package com.foobnix.comicui.fragment;
 
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
@@ -35,6 +35,9 @@ import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.ResultResponse;
 import com.foobnix.android.utils.ResultResponse2;
 import com.foobnix.android.utils.TxtUtils;
+import com.foobnix.comicui.AppDB;
+import com.foobnix.comicui.adapter.EntryAdapter;
+import com.foobnix.comicui.fast.FastScrollRecyclerView;
 import com.foobnix.dao2.FileMeta;
 import com.foobnix.model.AppProfile;
 import com.foobnix.model.AppState;
@@ -55,9 +58,6 @@ import com.foobnix.pdf.info.view.MyProgressBar;
 import com.foobnix.pdf.info.widget.AddCatalogDialog;
 import com.foobnix.pdf.info.widget.ChooserDialogFragment;
 import com.foobnix.sys.TempHolder;
-import com.foobnix.ui2.AppDB;
-import com.foobnix.ui2.adapter.EntryAdapter;
-import com.foobnix.ui2.fast.FastScrollRecyclerView;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -455,7 +455,7 @@ public class OpdsFragment2 extends UIFragment<Entry> {
 
                 final TextView downlodsPath = (TextView) view.findViewById(R.id.downlodsPath);
                 TxtUtils.underline(downlodsPath, TxtUtils.lastTwoPath(BookCSS.get().downlodsPath));
-                downlodsPath.setOnClickListener(new View.OnClickListener() {
+                downlodsPath.setOnClickListener(new OnClickListener() {
 
                     @Override
                     public void onClick(final View v) {

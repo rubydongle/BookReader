@@ -1,4 +1,4 @@
-package com.foobnix.ui2.fragment;
+package com.foobnix.comicui.fragment;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -52,6 +52,9 @@ import com.foobnix.android.utils.Keyboards;
 import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.ResultResponse2;
 import com.foobnix.android.utils.TxtUtils;
+import com.foobnix.comicui.BooksService;
+import com.foobnix.comicui.MainActivity;
+import com.foobnix.comicui.MyContextWrapper;
 import com.foobnix.dao2.FileMeta;
 import com.foobnix.drive.GFile;
 import com.foobnix.model.AppProfile;
@@ -89,9 +92,6 @@ import com.foobnix.pdf.info.wrapper.UITab;
 import com.foobnix.pdf.search.activity.msg.GDriveSycnEvent;
 import com.foobnix.pdf.search.activity.msg.MessageSync;
 import com.foobnix.sys.TempHolder;
-import com.foobnix.ui2.BooksService;
-import com.foobnix.ui2.MainTabs2;
-import com.foobnix.ui2.MyContextWrapper;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.jmedeisis.draglinearlayout.DragLinearLayout;
 
@@ -1609,7 +1609,7 @@ public class PrefFragment2 extends UIFragment {
 
                         getActivity()));
         TxtUtils.underlineTextView(whatIsNew);
-        whatIsNew.setOnClickListener(new View.OnClickListener() {
+        whatIsNew.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -1655,7 +1655,7 @@ public class PrefFragment2 extends UIFragment {
 
         TextView addFolder = inflate.findViewById(R.id.onConfigPath);
         TxtUtils.underlineTextView(addFolder);
-        addFolder.setOnClickListener(new View.OnClickListener() {
+        addFolder.setOnClickListener(new OnClickListener() {
 
             @Override
             public void onClick(final View v) {
@@ -2119,7 +2119,7 @@ public class PrefFragment2 extends UIFragment {
                                 TempHolder.listHash++;
                                 onTintChanged();
                                 sendNotifyTintChanged();
-                                ((MainTabs2) getActivity()).updateCurrentFragment();
+                                ((MainActivity) getActivity()).updateCurrentFragment();
 
                                 TxtUtils.updateAllLinks(inflate.getRootView());
 
@@ -2218,7 +2218,7 @@ public class PrefFragment2 extends UIFragment {
 
         inflate.findViewById(R.id.cleanRecent).
 
-                setOnClickListener(new View.OnClickListener() {
+                setOnClickListener(new OnClickListener() {
 
                     @Override
                     public void onClick(final View v) {
@@ -2246,7 +2246,7 @@ public class PrefFragment2 extends UIFragment {
 
         inflate.findViewById(R.id.cleanBookmarks).
 
-                setOnClickListener(new View.OnClickListener() {
+                setOnClickListener(new OnClickListener() {
 
                     @Override
                     public void onClick(final View v) {
@@ -2506,7 +2506,7 @@ public class PrefFragment2 extends UIFragment {
         AppProfile.save(getActivity());
 
         getActivity().finish();
-        MainTabs2.startActivity(getActivity(), TempHolder.get().currentTab);
+        MainActivity.startActivity(getActivity(), TempHolder.get().currentTab);
 
     }
 
@@ -2601,14 +2601,14 @@ public class PrefFragment2 extends UIFragment {
     }
 
     public void onEmail() {
-        final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+        final Intent emailIntent = new Intent(Intent.ACTION_SEND);
 
         String string = getResources().getString(R.string.my_email).replace("<u>", "").replace("</u>", "");
         final String[] aEmailList = {string};
-        emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, aEmailList);
-        emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, Apps.getApplicationName(getContext()) + " " + Apps.getVersionName(getContext()));
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, aEmailList);
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, Apps.getApplicationName(getContext()) + " " + Apps.getVersionName(getContext()));
         emailIntent.setType("plain/text");
-        emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "Hi Support, ");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Hi Support, ");
 
         try {
             startActivity(Intent.createChooser(emailIntent, getActivity().getString(R.string.send_mail)));
@@ -2618,7 +2618,7 @@ public class PrefFragment2 extends UIFragment {
     }
 
     public String getFullDeviceInfo() {
-        return "(" + Build.BRAND + ", " + Build.MODEL + ", " + android.os.Build.VERSION.RELEASE + ", " + Dips.screenWidthDP() + "dp" + ")";
+        return "(" + Build.BRAND + ", " + Build.MODEL + ", " + Build.VERSION.RELEASE + ", " + Dips.screenWidthDP() + "dp" + ")";
     }
 
     public void onTheme() {
@@ -2627,7 +2627,7 @@ public class PrefFragment2 extends UIFragment {
         AppProfile.save(getActivity());
         AppProfile.clear();
         getActivity().finish();
-        MainTabs2.startActivity(getActivity(), TempHolder.get().currentTab);
+        MainActivity.startActivity(getActivity(), TempHolder.get().currentTab);
     }
 
     public void onScan() {
@@ -2642,7 +2642,7 @@ public class PrefFragment2 extends UIFragment {
 
 
         Intent intent = new Intent(UIFragment.INTENT_TINT_CHANGE)//
-                .putExtra(MainTabs2.EXTRA_PAGE_NUMBER, UITab.getCurrentTabIndex(UITab.SearchFragment));//
+                .putExtra(MainActivity.EXTRA_PAGE_NUMBER, UITab.getCurrentTabIndex(UITab.SearchFragment));//
 
         LocalBroadcastManager.getInstance(getActivity()).sendBroadcast(intent);
     }

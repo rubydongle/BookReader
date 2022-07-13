@@ -139,9 +139,9 @@ import com.foobnix.tts.TTSControlsView;
 import com.foobnix.tts.TTSEngine;
 import com.foobnix.tts.TTSService;
 import com.foobnix.tts.TTSTracks;
-import com.foobnix.ui2.AppDB;
-import com.foobnix.ui2.adapter.DefaultListeners;
-import com.foobnix.ui2.adapter.FileMetaAdapter;
+import com.foobnix.comicui.AppDB;
+import com.foobnix.comicui.adapter.DefaultListeners;
+import com.foobnix.comicui.adapter.FileMetaAdapter;
 
 import org.ebookdroid.BookType;
 import org.ebookdroid.common.settings.CoreSettings;
