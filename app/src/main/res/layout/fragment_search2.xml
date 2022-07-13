@@ -170,7 +170,7 @@
         android:layout_height="match_parent"
      >
 
-        <com.foobnix.ui2.fast.FastScrollRecyclerView
+        <com.foobnix.comicui.fast.FastScrollRecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -181,7 +181,7 @@
             app:hideScrollbar="true"
             app:showTrack="false"
             app:trackColor="#bbbbbb" >
-        </com.foobnix.ui2.fast.FastScrollRecyclerView>
+        </com.foobnix.comicui.fast.FastScrollRecyclerView>
     </FrameLayout>
 
 </LinearLayout>

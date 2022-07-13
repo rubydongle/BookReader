@@ -230,7 +230,7 @@
         </activity>
 
         <service
-            android:name="com.foobnix.ui2.BooksService"
+            android:name="com.foobnix.comicui.BooksService"
             android:exported="false" />
         <service
             android:name="com.foobnix.tts.TTSService"
@@ -261,7 +261,7 @@
 
         <activity
             android:exported="true"
-            android:name="com.foobnix.ui2.CloudrailActivity"
+            android:name="com.foobnix.comicui.CloudrailActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait">
             <intent-filter>

@@ -47,7 +47,7 @@ public abstract class AdsFragmentActivity extends FragmentActivity {
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        activateAds();
+//        activateAds();
 
         // try {
         // sampleServer = new SampleServer(this);
