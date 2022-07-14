@@ -10,7 +10,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
 import com.foobnix.model.AppState;
-import com.foobnix.comicui.MainActivity;
+import com.midas.comicreader.MainActivity;
 
 public class Keyboards {
 

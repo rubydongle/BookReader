@@ -20,7 +20,7 @@ import com.foobnix.R;
 import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.TxtUtils;
 import com.foobnix.comicui.BooksService;
-import com.foobnix.comicui.MainActivity;
+import com.midas.comicreader.MainActivity;
 import com.foobnix.comicui.adapter.FileMetaAdapter;
 import com.foobnix.dao2.FileMeta;
 import com.foobnix.model.AppState;

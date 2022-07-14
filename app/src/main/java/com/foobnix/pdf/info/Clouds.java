@@ -28,7 +28,7 @@ import com.foobnix.pdf.search.activity.msg.MessageSyncUpdateList;
 import com.foobnix.pdf.search.view.AsyncProgressTask;
 import com.foobnix.comicui.BooksService;
 import com.foobnix.comicui.FileMetaCore;
-import com.foobnix.comicui.MainActivity;
+import com.midas.comicreader.MainActivity;
 
 import org.greenrobot.eventbus.EventBus;
 

@@ -22,11 +22,10 @@ import androidx.viewpager.widget.ViewPager;
 import com.foobnix.R;
 import com.foobnix.android.utils.Dips;
 import com.foobnix.android.utils.LOG;
-import com.foobnix.android.utils.TxtUtils;
 import com.foobnix.model.AppSP;
 import com.foobnix.model.AppState;
 import com.foobnix.pdf.info.TintUtil;
-import com.foobnix.comicui.MainActivity;
+import com.midas.comicreader.MainActivity;
 import com.foobnix.comicui.adapter.TabsAdapter2;
 
 /**

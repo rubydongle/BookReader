@@ -25,7 +25,7 @@ import com.foobnix.pdf.info.wrapper.DocumentController;
 import com.foobnix.pdf.info.wrapper.UITab;
 import com.foobnix.tts.TTSEngine;
 import com.foobnix.tts.TTSNotification;
-import com.foobnix.comicui.MainActivity;
+import com.midas.comicreader.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -10,6 +10,7 @@ import com.cloudrail.si.CloudRail;
 import com.foobnix.android.utils.LOG;
 import com.foobnix.comicui.fragment.UIFragment;
 import com.foobnix.pdf.info.wrapper.UITab;
+import com.midas.comicreader.MainActivity;
 
 public class CloudrailActivity extends Activity {
     public static final int REQUEST_CODE_ADD_RESOURCE = 123;

@@ -26,7 +26,7 @@ import com.foobnix.android.utils.Apps;
 import com.foobnix.android.utils.Dips;
 import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.TxtUtils;
-import com.foobnix.comicui.MainActivity;
+import com.midas.comicreader.MainActivity;
 import com.foobnix.comicui.adapter.AuthorsAdapter2;
 import com.foobnix.comicui.adapter.DefaultListeners;
 import com.foobnix.comicui.adapter.FileMetaAdapter;

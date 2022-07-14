@@ -35,7 +35,7 @@ import com.foobnix.pdf.info.IMG;
 import com.foobnix.pdf.search.activity.HorizontalViewActivity;
 import com.foobnix.sys.ImageExtractor;
 import com.foobnix.comicui.AppDB;
-import com.foobnix.comicui.MainActivity;
+import com.midas.comicreader.MainActivity;
 
 import org.ebookdroid.LibreraApp;
 import org.ebookdroid.ui.viewer.VerticalViewActivity;

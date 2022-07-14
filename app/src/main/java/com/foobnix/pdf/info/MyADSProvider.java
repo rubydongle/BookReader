@@ -5,8 +5,7 @@ import android.os.Handler;
 
 import com.foobnix.android.utils.Apps;
 import com.foobnix.android.utils.LOG;
-import com.foobnix.comicui.MainActivity;
-import com.google.android.gms.ads.AdListener;
+import com.midas.comicreader.MainActivity;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;

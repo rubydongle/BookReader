@@ -32,7 +32,7 @@ import com.foobnix.android.utils.StringDB;
 import com.foobnix.android.utils.TxtUtils;
 import com.foobnix.comicui.AppDB;
 import com.foobnix.comicui.AppRecycleAdapter;
-import com.foobnix.comicui.MainActivity;
+import com.midas.comicreader.MainActivity;
 import com.foobnix.comicui.fast.FastScroller;
 import com.foobnix.dao2.FileMeta;
 import com.foobnix.model.AppData;

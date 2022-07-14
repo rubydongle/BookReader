@@ -32,7 +32,6 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.foobnix.R;
-import com.foobnix.android.utils.Apps;
 import com.foobnix.android.utils.BaseItemLayoutAdapter;
 import com.foobnix.android.utils.Dips;
 import com.foobnix.android.utils.Keyboards;
@@ -42,7 +41,7 @@ import com.foobnix.model.AppState;
 import com.foobnix.pdf.info.ADS;
 import com.foobnix.pdf.info.TintUtil;
 import com.foobnix.pdf.info.model.BookCSS;
-import com.foobnix.comicui.MainActivity;
+import com.midas.comicreader.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;

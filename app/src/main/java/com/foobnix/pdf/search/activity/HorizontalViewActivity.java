@@ -106,7 +106,7 @@ import com.foobnix.tts.TTSService;
 import com.foobnix.tts.TtsStatus;
 import com.foobnix.comicui.AdsFragmentActivity;
 import com.foobnix.comicui.AppDB;
-import com.foobnix.comicui.MainActivity;
+import com.midas.comicreader.MainActivity;
 import com.foobnix.comicui.MyContextWrapper;
 
 import org.ebookdroid.common.settings.SettingsManager;

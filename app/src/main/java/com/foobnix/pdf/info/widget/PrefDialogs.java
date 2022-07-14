@@ -57,7 +57,7 @@ import com.foobnix.pdf.search.view.AsyncProgressResultToastTask;
 import com.foobnix.pdf.search.view.AsyncProgressTask;
 import com.foobnix.sys.TempHolder;
 import com.foobnix.comicui.BooksService;
-import com.foobnix.comicui.MainActivity;
+import com.midas.comicreader.MainActivity;
 
 import net.lingala.zip4j.exception.ZipException;
 

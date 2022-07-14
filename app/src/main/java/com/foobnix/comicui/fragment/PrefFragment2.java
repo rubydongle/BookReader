@@ -55,7 +55,7 @@ import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.ResultResponse2;
 import com.foobnix.android.utils.TxtUtils;
 import com.foobnix.comicui.BooksService;
-import com.foobnix.comicui.MainActivity;
+import com.midas.comicreader.MainActivity;
 import com.foobnix.comicui.MyContextWrapper;
 import com.foobnix.dao2.FileMeta;
 import com.foobnix.drive.GFile;

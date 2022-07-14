@@ -48,7 +48,7 @@ import com.foobnix.pdf.search.activity.msg.UpdateAllFragments;
 import com.foobnix.sys.TempHolder;
 import com.foobnix.comicui.AppDB;
 import com.foobnix.comicui.FileMetaCore;
-import com.foobnix.comicui.MainActivity;
+import com.midas.comicreader.MainActivity;
 
 import org.ebookdroid.BookType;
 import org.ebookdroid.common.settings.books.SharedBooks;

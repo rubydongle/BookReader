@@ -1,4 +1,4 @@
-package com.foobnix.comicui;
+package com.midas.comicreader;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -37,6 +37,8 @@ import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.Safe;
 import com.foobnix.android.utils.StringDB;
 import com.foobnix.android.utils.TxtUtils;
+import com.foobnix.comicui.AdsFragmentActivity;
+import com.foobnix.comicui.MyContextWrapper;
 import com.foobnix.comicui.adapter.TabsAdapter2;
 import com.foobnix.comicui.fragment.BookmarksFragment2;
 import com.foobnix.comicui.fragment.BrowseFragment2;

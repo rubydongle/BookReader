@@ -74,7 +74,7 @@ import com.foobnix.tts.TTSEngine;
 import com.foobnix.tts.TTSService;
 import com.foobnix.tts.TtsStatus;
 import com.foobnix.comicui.AppDB;
-import com.foobnix.comicui.MainActivity;
+import com.midas.comicreader.MainActivity;
 
 import org.ebookdroid.BookType;
 import org.ebookdroid.LibreraApp;

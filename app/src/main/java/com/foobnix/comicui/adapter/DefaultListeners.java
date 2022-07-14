@@ -15,7 +15,7 @@ import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.ResultResponse;
 import com.foobnix.android.utils.ResultResponse2;
 import com.foobnix.comicui.AppDB;
-import com.foobnix.comicui.MainActivity;
+import com.midas.comicreader.MainActivity;
 import com.foobnix.comicui.fragment.UIFragment;
 import com.foobnix.dao2.FileMeta;
 import com.foobnix.model.AppData;

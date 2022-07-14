@@ -48,7 +48,7 @@ import com.foobnix.android.utils.StringDB;
 import com.foobnix.android.utils.TxtUtils;
 import com.foobnix.comicui.AppDB;
 import com.foobnix.comicui.FileMetaCore;
-import com.foobnix.comicui.MainActivity;
+import com.midas.comicreader.MainActivity;
 import com.foobnix.comicui.adapter.DefaultListeners;
 import com.foobnix.comicui.adapter.FileMetaAdapter;
 import com.foobnix.comicui.fast.FastScrollRecyclerView;
