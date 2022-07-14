@@ -11,18 +11,17 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
-
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.USE_BIOMETRIC" />
-    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
 
-    <meta-data android:name="android.webkit.WebView.MetricsOptOut" android:value="true" />
-
+    <meta-data
+        android:name="android.webkit.WebView.MetricsOptOut"
+        android:value="true" />
 
     <application
         android:name="org.ebookdroid.LibreraApp"
@@ -35,6 +34,32 @@
         android:usesCleartextTraffic="true"
         android:vmSafeMode="${appSafeMode}"
         tools:replace="label, icon, roundIcon">
+
+        <activity
+            android:name="com.midas.comicreader.MainActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:resizeableActivity="true"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH1" />
+
+                <category android:name="android.intent.category.DEFAULT1" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.midas.comicreader.SettingsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_settings" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
@@ -59,14 +84,15 @@
                 android:resource="@xml/paths" />
         </provider>
 
-
         <activity
             android:name="com.foobnix.zipmanager.SendReceiveActivity"
             android:exported="true"
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:mimeType="*/*" />
             </intent-filter>
         </activity>
@@ -77,7 +103,9 @@
             android:targetActivity="com.foobnix.zipmanager.SendReceiveActivity">
             <intent-filter>
                 <action android:name="android.intent.action.PROCESS_TEXT" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity-alias>
@@ -88,7 +116,6 @@
             android:exported="true"
             android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan">
-
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -98,7 +125,6 @@
                 <data android:scheme="file" />
                 <data android:scheme="content" />
                 <data android:host="*" />
-
                 <data android:mimeType="application/x-fictionbook+xml" />
                 <data android:mimeType="application/x-fictionbook" />
                 <data android:mimeType="application/x-fb2" />
@@ -129,7 +155,6 @@
                 <data android:mimeType="application/octet-stream" />
                 <data android:mimeType="application/vnd.ms-xpsdocument" />
                 <data android:mimeType="application/oxps" />
-
                 <data android:mimeType="text/rtf" />
                 <data android:mimeType="text/richtext" />
                 <data android:mimeType="text/html" />
@@ -137,17 +162,13 @@
                 <data android:mimeType="text/x-log" />
                 <data android:mimeType="text/markdown" />
                 <data android:mimeType="text/x-markdown" />
-
                 <data android:mimeType="multipart/related" />
                 <data android:mimeType="message/rfc822" />
-
                 <data android:mimeType="image/djvu" />
                 <data android:mimeType="image/vnd.djvu" />
                 <data android:mimeType="image/x-djvu" />
                 <data android:mimeType="image/x.djvu" />
                 <data android:mimeType="image/tiff" />
-
-
                 <data android:mimeType="application/x-compressed" />
                 <data android:mimeType="application/x-compressed-zip" />
                 <data android:mimeType="application/x-zip-compressed" />
@@ -159,11 +180,9 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-
                 <data android:scheme="file" />
                 <data android:scheme="content" />
                 <data android:host="*" />
-
                 <data android:pathPattern=".*\\.txt" />
                 <data android:pathPattern=".*\\.log" />
                 <data android:pathPattern=".*\\.epub" />
@@ -191,7 +210,6 @@
                 <data android:pathPattern=".*\\.zip" />
                 <data android:pathPattern=".*\\.md" />
             </intent-filter>
-
             <intent-filter>
                 <action android:name="android.intent.action.VIEW_" />
 
@@ -202,13 +220,8 @@
                 <data android:scheme="content" />
                 <data android:host="*" />
                 <data android:mimeType="*/*" />
-
-
             </intent-filter>
-
         </activity>
-
-
         <activity
             android:name="com.foobnix.pdf.search.activity.HorizontalViewActivity"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
@@ -217,7 +230,6 @@
             android:resizeableActivity="true"
             android:screenOrientation="behind"
             android:windowSoftInputMode="adjustPan" />
-
         <activity
             android:name="org.ebookdroid.ui.viewer.VerticalViewActivity"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
@@ -225,9 +237,7 @@
             android:launchMode="singleTask"
             android:resizeableActivity="true"
             android:screenOrientation="behind"
-            android:windowSoftInputMode="adjustPan">
-
-        </activity>
+            android:windowSoftInputMode="adjustPan"></activity>
 
         <service
             android:name="com.foobnix.comicui.BooksService"
@@ -241,7 +251,8 @@
             </intent-filter>
         </service>
 
-        <receiver android:name="androidx.media.session.MediaButtonReceiver"
+        <receiver
+            android:name="androidx.media.session.MediaButtonReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
@@ -249,19 +260,17 @@
         </receiver>
 
         <activity
-            android:exported="true"
             android:name="com.foobnix.tts.TTSActivity"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
+            android:exported="true"
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
-
-
         <activity
-            android:exported="true"
             android:name="com.foobnix.comicui.CloudrailActivity"
+            android:exported="true"
             android:launchMode="singleTask"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -274,40 +283,16 @@
                 <data android:scheme="librera" />
             </intent-filter>
         </activity>
-
-
-
         <activity
-            android:exported="true"
             android:name="test.SvgActivity"
+            android:exported="true"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN1" />
+
                 <category android:name="android.intent.category.LAUNCHER1" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name="com.midas.comicreader.MainActivity"
-            android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
-            android:exported="true"
-            android:launchMode="singleTop"
-            android:resizeableActivity="true"
-            android:screenOrientation="behind"
-            android:windowSoftInputMode="stateHidden">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-                <category android:name="android.intent.category.MULTIWINDOW_LAUNCHER" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.SEARCH1" />
-                <category android:name="android.intent.category.DEFAULT1" />
-            </intent-filter>
-
-        </activity>
-
         <receiver
             android:name=".pdf.info.widget.RecentBooksWidget"
             android:exported="false"
@@ -315,6 +300,7 @@
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
+
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/recent_images_provider_3x1" />

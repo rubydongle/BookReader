@@ -343,6 +343,8 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'androidx.preference:preference:1.1.1'
 
     //debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
 
