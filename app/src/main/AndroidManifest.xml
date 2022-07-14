@@ -309,7 +309,7 @@
         </activity>
 
         <receiver
-            android:name=".widget.RecentBooksWidget"
+            android:name=".pdf.info.widget.RecentBooksWidget"
             android:exported="false"
             android:label="${appName}">
             <intent-filter>
@@ -321,7 +321,7 @@
         </receiver>
 
         <service
-            android:name=".widget.StackGridWidgetService"
+            android:name=".pdf.info.widget.StackGridWidgetService"
             android:exported="false"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
     </application>
