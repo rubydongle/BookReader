@@ -11,11 +11,11 @@ import android.text.TextPaint;
 
 import androidx.core.graphics.ColorUtils;
 
+import com.foobnix.R;
 import com.foobnix.android.utils.Dips;
 import com.foobnix.android.utils.LOG;
 import com.foobnix.model.AppSP;
 import com.foobnix.model.AppState;
-import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.model.BookCSS;
 import com.foobnix.pdf.info.wrapper.MagicHelper;
 

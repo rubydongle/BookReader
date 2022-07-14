@@ -14,6 +14,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.foobnix.R;
 import com.foobnix.StringResponse;
 import com.foobnix.android.utils.Dips;
 import com.foobnix.android.utils.IO;
@@ -21,7 +22,6 @@ import com.foobnix.android.utils.Keyboards;
 import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.UI;
 import com.foobnix.dao2.FileMeta;
-import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.Urls;
 import com.foobnix.pdf.info.wrapper.DocumentController;
 import com.foobnix.comicui.FileMetaCore;

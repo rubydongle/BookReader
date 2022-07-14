@@ -11,12 +11,12 @@ import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 
 import com.bumptech.glide.Glide;
+import com.foobnix.R;
 import com.foobnix.dao2.FileMeta;
 import com.foobnix.model.AppData;
 import com.foobnix.model.AppProfile;
 import com.foobnix.model.AppState;
 import com.foobnix.pdf.info.IMG;
-import com.foobnix.pdf.info.R;
 import com.foobnix.sys.ImageExtractor;
 import com.foobnix.comicui.AppDB;
 

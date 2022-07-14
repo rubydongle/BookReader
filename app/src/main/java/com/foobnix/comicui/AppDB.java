@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.foobnix.BuildConfig;
+import com.foobnix.R;
 import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.StringDB;
 import com.foobnix.android.utils.TxtUtils;
@@ -19,10 +21,8 @@ import com.foobnix.dao2.FileMetaDao;
 import com.foobnix.model.AppData;
 import com.foobnix.model.AppState;
 import com.foobnix.model.SimpleMeta;
-import com.foobnix.pdf.info.BuildConfig;
 import com.foobnix.pdf.info.Clouds;
 import com.foobnix.pdf.info.ExtUtils;
-import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.wrapper.UITab;
 
 import org.greenrobot.greendao.Property;

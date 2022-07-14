@@ -7,8 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.foobnix.R;
 import com.foobnix.android.utils.TxtUtils;
-import com.foobnix.pdf.info.R;
 
 import java.util.List;
 

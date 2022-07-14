@@ -11,12 +11,12 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.TextView;
 
+import com.foobnix.R;
 import com.foobnix.android.utils.Dips;
 import com.foobnix.android.utils.ResultResponse;
 import com.foobnix.dao2.FileMeta;
 import com.foobnix.model.AppState;
 import com.foobnix.pdf.info.IMG;
-import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.TintUtil;
 
 import java.io.File;

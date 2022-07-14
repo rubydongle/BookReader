@@ -9,12 +9,12 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.foobnix.R;
 import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.TxtUtils;
 import com.foobnix.comicui.AppRecycleAdapter;
 import com.foobnix.comicui.fast.FastScroller;
 import com.foobnix.model.AppState;
-import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.TintUtil;
 
 import java.util.Locale;

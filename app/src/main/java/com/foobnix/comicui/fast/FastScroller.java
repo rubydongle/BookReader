@@ -42,7 +42,7 @@ import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.foobnix.pdf.info.R;
+import com.foobnix.R;
 
 @SuppressLint("NewApi")
 public class FastScroller extends LinearLayout {

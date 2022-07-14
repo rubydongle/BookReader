@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import androidx.core.text.TextUtilsCompat;
 import androidx.core.view.ViewCompat;
 
+import com.foobnix.R;
 import com.foobnix.android.utils.LOG;
 import com.foobnix.opds.OPDS;
 

@@ -16,8 +16,8 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 
+import com.foobnix.R;
 import com.foobnix.android.utils.LOG;
-import com.foobnix.pdf.info.R;
 
 import java.util.ArrayList;
 

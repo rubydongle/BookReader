@@ -33,6 +33,7 @@ import androidx.fragment.app.FragmentActivity;
 
 import com.buzzingandroid.ui.HSVColorPickerDialog;
 import com.buzzingandroid.ui.HSVColorPickerDialog.OnColorSelectedListener;
+import com.foobnix.R;
 import com.foobnix.android.utils.BaseItemLayoutAdapter;
 import com.foobnix.android.utils.Dips;
 import com.foobnix.android.utils.IO;
@@ -52,7 +53,6 @@ import com.foobnix.model.AppProfile;
 import com.foobnix.model.AppState;
 import com.foobnix.model.TagData;
 import com.foobnix.pdf.info.ExtUtils;
-import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.TintUtil;
 import com.foobnix.pdf.info.WebViewHepler;
 import com.foobnix.pdf.info.model.BookCSS;

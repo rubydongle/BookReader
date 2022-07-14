@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.core.util.Pair;
 
+import com.foobnix.R;
 import com.foobnix.android.utils.Apps;
 import com.foobnix.android.utils.BaseItemLayoutAdapter;
 import com.foobnix.android.utils.LOG;
@@ -21,7 +22,6 @@ import com.foobnix.android.utils.Views;
 import com.foobnix.ext.CacheZipUtils;
 import com.foobnix.mobi.parser.IOUtils;
 import com.foobnix.pdf.info.ExtUtils;
-import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.search.view.AsyncProgressTask;
 import com.foobnix.sys.ArchiveEntry;
 import com.foobnix.sys.ZipArchiveInputStream;

@@ -8,9 +8,9 @@ import android.view.MenuItem.OnMenuItemClickListener;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 
+import com.foobnix.R;
 import com.foobnix.model.AppState;
 import com.foobnix.pdf.info.AppsConfig;
-import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.Urls;
 import com.foobnix.pdf.info.view.MyPopupMenu;
 

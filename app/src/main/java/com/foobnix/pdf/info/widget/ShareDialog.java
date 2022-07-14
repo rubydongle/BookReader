@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import androidx.core.util.Pair;
 
+import com.foobnix.R;
 import com.foobnix.StringResponse;
 import com.foobnix.android.utils.BaseItemLayoutAdapter;
 import com.foobnix.android.utils.IO;
@@ -35,7 +36,6 @@ import com.foobnix.pdf.info.DialogSpeedRead;
 import com.foobnix.pdf.info.ExtUtils;
 import com.foobnix.pdf.info.IMG;
 import com.foobnix.pdf.info.Playlists;
-import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.TintUtil;
 import com.foobnix.pdf.info.Urls;
 import com.foobnix.pdf.info.view.AlertDialogs;

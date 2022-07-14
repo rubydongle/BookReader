@@ -13,8 +13,8 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
+import com.foobnix.R;
 import com.foobnix.android.utils.Dips;
-import com.foobnix.pdf.info.R;
 
 public class BgClickbaleView extends TextView {
 

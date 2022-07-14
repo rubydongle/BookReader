@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.foobnix.R;
 import com.foobnix.android.utils.ResultResponse;
-import com.foobnix.pdf.info.R;
 
 import java.io.File;
 import java.util.ArrayList;

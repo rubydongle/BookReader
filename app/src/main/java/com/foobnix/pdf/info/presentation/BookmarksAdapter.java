@@ -13,12 +13,12 @@ import android.widget.TextView;
 
 import androidx.core.view.ViewCompat;
 
+import com.foobnix.R;
 import com.foobnix.android.utils.TxtUtils;
 import com.foobnix.model.AppBookmark;
 import com.foobnix.model.AppSP;
 import com.foobnix.model.AppState;
 import com.foobnix.pdf.info.BookmarksData;
-import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.wrapper.DocumentController;
 
 import java.util.List;

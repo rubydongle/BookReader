@@ -7,7 +7,6 @@ import android.widget.ImageView;
 
 import com.foobnix.android.utils.Dips;
 import com.foobnix.dao2.FileMeta;
-import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.TintUtil;
 
 public class StarsWrapper {

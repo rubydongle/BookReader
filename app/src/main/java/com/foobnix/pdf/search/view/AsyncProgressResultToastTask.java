@@ -6,11 +6,11 @@ import android.graphics.Color;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
+import com.foobnix.R;
 import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.Objects;
 import com.foobnix.android.utils.ResultResponse;
 import com.foobnix.model.AppState;
-import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.TintUtil;
 
 public abstract class AsyncProgressResultToastTask extends AsyncTask<Object, Object, Boolean> {

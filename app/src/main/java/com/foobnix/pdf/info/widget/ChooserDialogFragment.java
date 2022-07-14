@@ -12,10 +12,10 @@ import android.widget.FrameLayout.LayoutParams;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentActivity;
 
+import com.foobnix.R;
 import com.foobnix.android.utils.Keyboards;
 import com.foobnix.android.utils.ResultResponse;
 import com.foobnix.android.utils.ResultResponse2;
-import com.foobnix.pdf.info.R;
 import com.foobnix.comicui.fragment.BrowseFragment2;
 
 public class ChooserDialogFragment extends DialogFragment {

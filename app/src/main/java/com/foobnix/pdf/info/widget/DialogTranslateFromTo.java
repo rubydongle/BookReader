@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.foobnix.R;
 import com.foobnix.android.utils.BaseItemLayoutAdapter;
 import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.TxtUtils;
@@ -22,7 +23,6 @@ import com.foobnix.android.utils.Views;
 import com.foobnix.model.AppState;
 import com.foobnix.pdf.info.DictsHelper;
 import com.foobnix.pdf.info.DictsHelper.DictItem;
-import com.foobnix.pdf.info.R;
 
 import org.ebookdroid.LibreraApp;
 

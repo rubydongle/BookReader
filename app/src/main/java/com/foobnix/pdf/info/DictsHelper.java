@@ -13,6 +13,7 @@ import android.graphics.drawable.Drawable;
 import android.view.Gravity;
 import android.widget.Toast;
 
+import com.foobnix.R;
 import com.foobnix.android.utils.Dips;
 import com.foobnix.android.utils.LOG;
 import com.foobnix.model.AppSP;

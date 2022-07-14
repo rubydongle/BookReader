@@ -73,6 +73,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.foobnix.R;
 import com.foobnix.StringResponse;
 import com.foobnix.android.utils.Apps;
 import com.foobnix.android.utils.BaseItemAdapter;
@@ -107,7 +108,6 @@ import com.foobnix.pdf.info.FontExtractor;
 import com.foobnix.pdf.info.IMG;
 import com.foobnix.pdf.info.OutlineHelper;
 import com.foobnix.pdf.info.PageUrl;
-import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.TintUtil;
 import com.foobnix.pdf.info.Urls;
 import com.foobnix.pdf.info.model.AnnotationType;

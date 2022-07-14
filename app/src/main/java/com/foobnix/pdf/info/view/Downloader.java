@@ -4,12 +4,12 @@ import android.app.Activity;
 import android.content.Context;
 import android.widget.Toast;
 
+import com.foobnix.R;
 import com.foobnix.android.utils.LOG;
 import com.foobnix.dao2.FileMeta;
 import com.foobnix.ext.Fb2Extractor;
 import com.foobnix.pdf.info.Clouds;
 import com.foobnix.pdf.info.ExtUtils;
-import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.search.view.AsyncProgressTask;
 
 import java.io.File;

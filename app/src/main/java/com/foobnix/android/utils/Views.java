@@ -27,8 +27,8 @@ import android.widget.PopupWindow;
 import android.widget.PopupWindow.OnDismissListener;
 import android.widget.TextView;
 
+import com.foobnix.R;
 import com.foobnix.pdf.info.AppsConfig;
-import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.TintUtil;
 
 import java.lang.reflect.Field;

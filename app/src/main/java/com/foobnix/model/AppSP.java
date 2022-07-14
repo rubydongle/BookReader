@@ -4,8 +4,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Environment;
 
+import com.foobnix.BuildConfig;
 import com.foobnix.android.utils.Objects;
-import com.foobnix.pdf.info.BuildConfig;
 
 import java.io.File;
 

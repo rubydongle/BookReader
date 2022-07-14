@@ -12,9 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.foobnix.R;
 import com.foobnix.model.AppProfile;
 import com.foobnix.model.AppState;
-import com.foobnix.pdf.info.R;
 
 public class KeyCodeDialog {
 

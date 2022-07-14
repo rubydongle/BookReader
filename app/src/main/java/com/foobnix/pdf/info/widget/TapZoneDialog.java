@@ -7,10 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Spinner;
 
+import com.foobnix.R;
 import com.foobnix.android.utils.BaseItemLayoutAdapter;
 import com.foobnix.android.utils.Views;
 import com.foobnix.model.AppState;
-import com.foobnix.pdf.info.R;
 
 import java.util.Arrays;
 import java.util.List;

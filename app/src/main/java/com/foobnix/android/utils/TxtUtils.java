@@ -19,12 +19,12 @@ import android.widget.TextView;
 
 import androidx.core.util.Pair;
 
+import com.foobnix.R;
 import com.foobnix.dao2.FileMeta;
 import com.foobnix.model.AppSP;
 import com.foobnix.model.AppState;
 import com.foobnix.model.MyPath;
 import com.foobnix.pdf.info.Android6;
-import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.model.BookCSS;
 import com.foobnix.sys.TempHolder;
 import com.foobnix.comicui.AppDB;

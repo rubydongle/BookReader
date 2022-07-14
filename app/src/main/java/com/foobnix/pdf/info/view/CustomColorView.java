@@ -13,9 +13,9 @@ import android.widget.TextView;
 
 import com.buzzingandroid.ui.HSVColorPickerDialog;
 import com.buzzingandroid.ui.HSVColorPickerDialog.OnColorSelectedListener;
+import com.foobnix.R;
 import com.foobnix.StringResponse;
 import com.foobnix.android.utils.Dips;
-import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.TintUtil;
 import com.foobnix.pdf.info.wrapper.MagicHelper;
 

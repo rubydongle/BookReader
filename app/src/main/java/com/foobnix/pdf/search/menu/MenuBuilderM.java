@@ -9,9 +9,9 @@ import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.View;
 import android.widget.PopupMenu;
 
+import com.foobnix.R;
 import com.foobnix.model.AppSP;
 import com.foobnix.model.AppState;
-import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.wrapper.DocumentController;
 
 @SuppressLint("NewApi")

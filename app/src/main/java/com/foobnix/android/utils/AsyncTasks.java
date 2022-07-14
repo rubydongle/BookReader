@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-import com.foobnix.pdf.info.R;
+import com.foobnix.R;
 
 public class AsyncTasks {
 

@@ -16,7 +16,6 @@ import com.foobnix.mobi.parser.IOUtils;
 import com.foobnix.model.AppState;
 import com.foobnix.pdf.info.Android6;
 import com.foobnix.pdf.info.ExtUtils;
-import com.foobnix.pdf.info.R;
 import com.foobnix.comicui.MyContextWrapper;
 
 import org.ebookdroid.BookType;

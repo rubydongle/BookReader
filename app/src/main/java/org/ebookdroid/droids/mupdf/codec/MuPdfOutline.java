@@ -1,9 +1,9 @@
 package org.ebookdroid.droids.mupdf.codec;
 
+import com.foobnix.BuildConfig;
 import com.foobnix.android.utils.LOG;
 import com.foobnix.ext.Fb2Extractor;
 import com.foobnix.model.AppState;
-import com.foobnix.pdf.info.BuildConfig;
 import com.foobnix.sys.TempHolder;
 
 import org.ebookdroid.core.codec.OutlineLink;

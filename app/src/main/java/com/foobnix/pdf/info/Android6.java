@@ -16,6 +16,7 @@ import android.widget.Toast;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.foobnix.R;
 import com.foobnix.android.utils.LOG;
 
 public class Android6 {

@@ -8,10 +8,10 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
+import com.foobnix.R;
 import com.foobnix.android.utils.Keyboards;
 import com.foobnix.model.AppBookmark;
 import com.foobnix.pdf.info.BookmarksData;
-import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.presentation.BookmarksAdapter;
 
 import java.util.List;

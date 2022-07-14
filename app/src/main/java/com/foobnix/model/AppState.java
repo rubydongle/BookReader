@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.view.KeyEvent;
 
+import com.foobnix.R;
 import com.foobnix.android.utils.Apps;
 import com.foobnix.android.utils.Dips;
 import com.foobnix.android.utils.IO;
@@ -17,7 +18,6 @@ import com.foobnix.android.utils.Objects.IgnoreHashCode;
 import com.foobnix.android.utils.TxtUtils;
 import com.foobnix.opds.SamlibOPDS;
 import com.foobnix.pdf.info.AppsConfig;
-import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.Urls;
 import com.foobnix.pdf.info.model.BookCSS;
 import com.foobnix.pdf.info.widget.DialogTranslateFromTo;

@@ -4,8 +4,8 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 
+import com.foobnix.R;
 import com.foobnix.android.utils.LOG;
-import com.foobnix.pdf.info.R;
 import com.foobnix.pdf.info.view.MyProgressDialog;
 
 public abstract class AsyncProgressTask<T> extends AsyncTask<Object, Object, T> {

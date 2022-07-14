@@ -1,5 +1,8 @@
 package com.foobnix.android.utils;
 
+import static android.content.Context.ACCESSIBILITY_SERVICE;
+import static android.provider.Settings.System.SCREEN_BRIGHTNESS;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -17,13 +20,8 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import android.widget.Toast;
 
+import com.foobnix.R;
 import com.foobnix.model.AppState;
-import com.foobnix.pdf.info.R;
-
-import static android.content.Context.ACCESSIBILITY_SERVICE;
-import static android.provider.Settings.System.SCREEN_BRIGHTNESS;
-
-import androidx.core.content.ContextCompat;
 
 public class Apps {
 

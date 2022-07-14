@@ -2,6 +2,7 @@ package com.foobnix.pdf.info;
 
 import android.content.Context;
 
+import com.foobnix.R;
 import com.foobnix.android.utils.IO;
 import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.Objects;

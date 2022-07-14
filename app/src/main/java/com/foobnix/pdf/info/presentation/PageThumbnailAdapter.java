@@ -11,12 +11,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.foobnix.R;
 import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.TxtUtils;
 import com.foobnix.model.AppSP;
 import com.foobnix.pdf.info.IMG;
 import com.foobnix.pdf.info.PageUrl;
-import com.foobnix.pdf.info.R;
 
 public class PageThumbnailAdapter extends BaseAdapter {
 
