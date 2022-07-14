@@ -40,7 +40,6 @@ import javax.xml.stream.events.Characters;
 
 public class AppState {
 
-
     public static final String PROXY_HTTP = "HTTP";
     public static final String PROXY_SOCKS = "SOCKS";
 
@@ -472,17 +471,17 @@ public class AppState {
     public int colorDayBg = COLOR_WHITE;
     public int colorNigthText = COLOR_WHITE;
     public int colorNigthBg = COLOR_BLACK;
-    public boolean supportPDF = true;
+    public boolean supportPDF = false;
     public boolean supportXPS = false;
-    public boolean supportDJVU = true;
-    public boolean supportEPUB = true;
-    public boolean supportFB2 = true;
-    public boolean supportRTF = true;
-    public boolean supportODT = true;
-    public boolean supportDOCX = true;
-    public boolean supportMOBI = true;
-    public boolean supportCBZ = false;
-    public boolean supportZIP = true;
+    public boolean supportDJVU = false;
+    public boolean supportEPUB = false;
+    public boolean supportFB2 = false;
+    public boolean supportRTF = false;
+    public boolean supportODT = false;
+    public boolean supportDOCX = false;
+    public boolean supportMOBI = false;
+    public boolean supportCBZ = true;
+    public boolean supportZIP = false;
     public boolean supportArch = false;
     public boolean supportOther = false;
     public boolean supportTXT = false;

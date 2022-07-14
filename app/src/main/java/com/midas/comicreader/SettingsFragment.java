@@ -1,4 +1,4 @@
-package com.foobnix.comicui.fragment;
+package com.midas.comicreader;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -55,8 +55,8 @@ import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.ResultResponse2;
 import com.foobnix.android.utils.TxtUtils;
 import com.foobnix.comicui.BooksService;
-import com.midas.comicreader.MainActivity;
 import com.foobnix.comicui.MyContextWrapper;
+import com.foobnix.comicui.fragment.UIFragment;
 import com.foobnix.dao2.FileMeta;
 import com.foobnix.drive.GFile;
 import com.foobnix.model.AppProfile;
@@ -94,7 +94,6 @@ import com.foobnix.pdf.search.activity.msg.MessageSync;
 import com.foobnix.sys.TempHolder;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.jmedeisis.draglinearlayout.DragLinearLayout;
-import com.midas.comicreader.SettingsActivity;
 
 import org.ebookdroid.LibreraApp;
 import org.greenrobot.eventbus.Subscribe;
@@ -107,7 +106,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-public class PrefFragment2 extends UIFragment {
+public class SettingsFragment extends UIFragment {
     public static final Pair<Integer, Integer> PAIR = new Pair<>(R.string.preferences, R.drawable.glyphicons_281_settings);
 
     private static final String WWW_SITE = "https://librera.mobi";
