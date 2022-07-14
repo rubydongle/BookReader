@@ -54,8 +54,6 @@
 
         </LinearLayout>
 
-       " />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -101,11 +99,15 @@
                 android:src="@drawable/glyphicons_137_cogwheel"
                 android:tint="@color/tint_gray" />
 
-
         </LinearLayout>
 
 
 
+        <TextView
+            android:id="@+id/jump_to_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Jump to Settings"/>
         <LinearLayout
             android:id="@+id/section1"
             android:layout_width="match_parent"

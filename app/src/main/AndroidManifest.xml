@@ -30,7 +30,7 @@
         android:largeHeap="true"
         android:requestLegacyExternalStorage="true"
         android:roundIcon="${appRoundIcon}"
-        android:theme="@style/StyledIndicatorsWhite"
+        android:theme="@style/Theme.ComicReader"
         android:usesCleartextTraffic="true"
         android:vmSafeMode="${appSafeMode}"
         tools:replace="label, icon, roundIcon">
@@ -58,8 +58,9 @@
 
         <activity
             android:name="com.midas.comicreader.SettingsActivity"
-            android:exported="false"
-            android:label="@string/title_activity_settings" />
+            android:exported="true"
+            android:label="@string/title_activity_settings" >
+        </activity>
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"

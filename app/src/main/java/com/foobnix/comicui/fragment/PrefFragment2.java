@@ -94,6 +94,7 @@ import com.foobnix.pdf.search.activity.msg.MessageSync;
 import com.foobnix.sys.TempHolder;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.jmedeisis.draglinearlayout.DragLinearLayout;
+import com.midas.comicreader.SettingsActivity;
 
 import org.ebookdroid.LibreraApp;
 import org.greenrobot.eventbus.Subscribe;
@@ -273,6 +274,11 @@ public class PrefFragment2 extends UIFragment {
         syncHeader = inflate.findViewById(R.id.syncHeader);
         onSync(null);
         syncHeader.setOnClickListener((in) -> Dialogs.showSyncLOGDialog(getActivity()));
+
+        TextView jumpToSettings = inflate.findViewById(R.id.jump_to_settings);
+        jumpToSettings.setOnClickListener(v -> {
+            startActivity(new Intent(getActivity(), SettingsActivity.class));
+        });
 
 
         isEnableSync = inflate.findViewById(R.id.isEnableSync);
