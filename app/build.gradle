@@ -387,7 +387,7 @@ dependencies {
     fdroidImplementation project(':pro')
     implementation project(':smartreflow')
 
-
+    implementation 'com.google.android.material:material:1.4.0'
     libreraImplementation 'com.google.firebase:firebase-ads:19.8.0'
     betaImplementation 'com.google.firebase:firebase-ads-lite:19.8.0'
     pdf_v2Implementation 'com.google.firebase:firebase-ads-lite:19.8.0'
