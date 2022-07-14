@@ -21,6 +21,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.drawerlayout.widget.DrawerLayout.DrawerListener;
@@ -90,7 +92,7 @@ import test.SvgActivity;
 
 
 @SuppressLint("NewApi")
-public class MainActivity extends AdsFragmentActivity {
+public class MainActivity extends AppCompatActivity {
     public static final int REQUEST_CODE_ADD_RESOURCE = 123;
     public static final String EXTRA_EXIT = "EXTRA_EXIT";
     public static final String EXTRA_SHOW_TABS = "EXTRA_SHOW_TABS";
@@ -220,6 +222,7 @@ public class MainActivity extends AdsFragmentActivity {
 
     @Override
     protected void onNewIntent(final Intent intent) {
+        super.onNewIntent(intent);
         LOG.d(TAG, "onNewIntent");
         // testIntentHandler();
         if (intent.getBooleanExtra(EXTRA_EXIT, false)) {
@@ -308,7 +311,7 @@ public class MainActivity extends AdsFragmentActivity {
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
-        withInterstitial = false;
+//        withInterstitial = false;
         super.onPostCreate(savedInstanceState);
         // testIntentHandler();
 
@@ -370,6 +373,11 @@ public class MainActivity extends AdsFragmentActivity {
         DocumentController.doContextMenu(this);
 
         setContentView(R.layout.main_tabs);
+
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+        }
 
 
         imageMenu = (ImageView) findViewById(R.id.imageMenu1);
@@ -853,12 +861,13 @@ public class MainActivity extends AdsFragmentActivity {
             pager.setCurrentItem(currentItem);
             IMG.clearMemoryCache();
         }
-        activateAds();
+//        activateAds();
 
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         Android6.onRequestPermissionsResult(this, requestCode, permissions, grantResults);
     }
 
@@ -871,7 +880,7 @@ public class MainActivity extends AdsFragmentActivity {
         return super.onKeyLongPress(keyCode, event);
     }
 
-    @Override
+//    @Override
     public void onFinishActivity() {
         finish();
     }
