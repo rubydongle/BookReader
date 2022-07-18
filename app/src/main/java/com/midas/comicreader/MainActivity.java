@@ -109,11 +109,11 @@ public class MainActivity extends AdsAppCompatActivity {
     List<UIFragment> tabFragments;
     TabsAdapter2 adapter;
     ImageView imageMenu;
-    View imageMenuParent, overlay;
-    TextView toastBrightnessText;
+    View imageMenuParent;//, overlay;
+//    TextView toastBrightnessText;
     Handler handler;
-    MyProgressBar fab;
-    SwipeRefreshLayout swipeRefreshLayout;
+//    MyProgressBar fab;
+//    SwipeRefreshLayout swipeRefreshLayout;
     boolean isMyKey = false;
     OnPageChangeListener onPageChangeListener = new OnPageChangeListener() {
         UIFragment uiFragment = null;
@@ -138,7 +138,7 @@ public class MainActivity extends AdsAppCompatActivity {
         @Override
         public void onPageScrollStateChanged(int state) {
             if (isPullToRefreshEnable()) {
-                swipeRefreshLayout.setEnabled(state == ViewPager.SCROLL_STATE_IDLE);
+//                swipeRefreshLayout.setEnabled(state == ViewPager.SCROLL_STATE_IDLE);
             }
             LOG.d("onPageSelected onPageScrollStateChanged", state);
             if (state == ViewPager.SCROLL_STATE_IDLE) {
@@ -149,11 +149,11 @@ public class MainActivity extends AdsAppCompatActivity {
 
         public void check() {
             if (isPullToRefreshEnable()) {
-                if (uiFragment instanceof PrefFragment2) {
-                    swipeRefreshLayout.setEnabled(false);
-                } else {
-                    swipeRefreshLayout.setEnabled(true);
-                }
+//                if (uiFragment instanceof PrefFragment2) {
+//                    swipeRefreshLayout.setEnabled(false);
+//                } else {
+//                    swipeRefreshLayout.setEnabled(true);
+//                }
             }
         }
     };
@@ -287,7 +287,7 @@ public class MainActivity extends AdsAppCompatActivity {
                         EventBus.getDefault().post(new GDriveSycnEvent());
                         GFile.runSyncService(MainActivity.this);
 
-                        swipeRefreshLayout.setEnabled(isPullToRefreshEnable());
+//                        swipeRefreshLayout.setEnabled(isPullToRefreshEnable());
 
                         AppSP.get().save();
 
@@ -297,7 +297,7 @@ public class MainActivity extends AdsAppCompatActivity {
                                 LOG.e(exception);
                                 Toast.makeText(this, R.string.fail, Toast.LENGTH_SHORT).show();
                                 AppSP.get().isEnableSync = false;
-                                swipeRefreshLayout.setEnabled(false);
+//                                swipeRefreshLayout.setEnabled(false);
                                 AppSP.get().save();
 
                             }
@@ -310,7 +310,8 @@ public class MainActivity extends AdsAppCompatActivity {
     }
 
     public boolean isPullToRefreshEnable() {
-        return isPullToRefreshEnable(MainActivity.this, swipeRefreshLayout);
+        return false;
+//        return isPullToRefreshEnable(MainActivity.this, swipeRefreshLayout);
     }
 
     @Override
@@ -321,7 +322,7 @@ public class MainActivity extends AdsAppCompatActivity {
 
         if (Android6.canWrite(this)) {
             BrightnessHelper.applyBrigtness(this);
-            BrightnessHelper.updateOverlay(overlay);
+//            BrightnessHelper.updateOverlay(overlay);
         }
         GFile.runSyncService(this);
     }
@@ -385,9 +386,11 @@ public class MainActivity extends AdsAppCompatActivity {
         DocumentController.doRotation(this);
         DocumentController.doContextMenu(this);
 
-        setContentView(R.layout.main_tabs);
+        // https://www.jianshu.com/p/4df8709a76fa
+        setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Bubble");
+        setSupportActionBar(toolbar);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu_white);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -395,35 +398,35 @@ public class MainActivity extends AdsAppCompatActivity {
         imageMenuParent = findViewById(R.id.imageParent1);
         imageMenuParent.setBackgroundColor(TintUtil.color);
 
-        fab = findViewById(R.id.fab);
-        fab.setVisibility(View.GONE);
-        fab.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Dialogs.showSyncLOGDialog(MainActivity.this);
-            }
-        });
-        fab.setBackgroundResource(R.drawable.bg_circular);
-        TintUtil.setDrawableTint(fab.getBackground().getCurrent(), TintUtil.color);
+//        fab = findViewById(R.id.fab);
+//        fab.setVisibility(View.GONE);
+//        fab.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Dialogs.showSyncLOGDialog(MainActivity.this);
+//            }
+//        });
+//        fab.setBackgroundResource(R.drawable.bg_circular);
+//        TintUtil.setDrawableTint(fab.getBackground().getCurrent(), TintUtil.color);
 
-        swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout);
-        swipeRefreshLayout.setColorSchemeColors(TintUtil.color);
-
-
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                swipeRefreshLayout.setRefreshing(false);
-                GFile.runSyncService(MainActivity.this, true);
-            }
-        });
+//        swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout);
+//        swipeRefreshLayout.setColorSchemeColors(TintUtil.color);
 
 
-        overlay = findViewById(R.id.overlay);
+//        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//            @Override
+//            public void onRefresh() {
+//                swipeRefreshLayout.setRefreshing(false);
+//                GFile.runSyncService(MainActivity.this, true);
+//            }
+//        });
 
-        toastBrightnessText = (TextView) findViewById(R.id.toastBrightnessText);
-        toastBrightnessText.setVisibility(View.GONE);
-        TintUtil.setDrawableTint(toastBrightnessText.getCompoundDrawables()[0], Color.WHITE);
+
+//        overlay = findViewById(R.id.overlay);
+
+//        toastBrightnessText = (TextView) findViewById(R.id.toastBrightnessText);
+//        toastBrightnessText.setVisibility(View.GONE);
+//        TintUtil.setDrawableTint(toastBrightnessText.getCompoundDrawables()[0], Color.WHITE);
 
         tabFragments = new ArrayList<UIFragment>();
 
@@ -518,18 +521,18 @@ public class MainActivity extends AdsAppCompatActivity {
             @Override
             public void onDrawerSlide(View arg0, float arg1) {
                 LOG.d("drawerLayout-onDrawerSlide");
-                if (AppSP.get().isEnableSync) {
-                    swipeRefreshLayout.setEnabled(false);
-                }
+//                if (AppSP.get().isEnableSync) {
+//                    swipeRefreshLayout.setEnabled(false);
+//                }
 
             }
 
             @Override
             public void onDrawerOpened(View arg0) {
                 LOG.d("drawerLayout-onDrawerOpened");
-                if (AppSP.get().isEnableSync) {
-                    swipeRefreshLayout.setEnabled(false);
-                }
+//                if (AppSP.get().isEnableSync) {
+//                    swipeRefreshLayout.setEnabled(false);
+//                }
 
             }
 
@@ -539,12 +542,12 @@ public class MainActivity extends AdsAppCompatActivity {
                 try {
                     tabFragments.get(pager.getCurrentItem()).onSelectFragment();
 
-                    if (isPullToRefreshEnable(MainActivity.this, swipeRefreshLayout)) {
-                        swipeRefreshLayout.setEnabled(true);
-                        swipeRefreshLayout.setColorSchemeColors(TintUtil.color);
-
-                    }
-                    TintUtil.setDrawableTint(fab.getBackground().getCurrent(), TintUtil.color);
+//                    if (isPullToRefreshEnable(MainActivity.this, swipeRefreshLayout)) {
+//                        swipeRefreshLayout.setEnabled(true);
+//                        swipeRefreshLayout.setColorSchemeColors(TintUtil.color);
+//
+//                    }
+//                    TintUtil.setDrawableTint(fab.getBackground().getCurrent(), TintUtil.color);
 
 
                 } catch (Exception e) {
@@ -559,7 +562,7 @@ public class MainActivity extends AdsAppCompatActivity {
         } else {
             indicator = (SlidingTabLayout) findViewById(R.id.slidingTabs2);
         }
-        indicator.addSwipeRefreshLayout(swipeRefreshLayout);
+//        indicator.addSwipeRefreshLayout(swipeRefreshLayout);
         indicator.setVisibility(View.VISIBLE);
         indicator.init();
 
@@ -698,16 +701,16 @@ public class MainActivity extends AdsAppCompatActivity {
         try {
             if (msg.state == MessageSync.STATE_VISIBLE) {
                 if (BookCSS.get().isSyncAnimation) {
-                    fab.setVisibility(View.VISIBLE);
+//                    fab.setVisibility(View.VISIBLE);
                 }
-                swipeRefreshLayout.setRefreshing(false);
+//                swipeRefreshLayout.setRefreshing(false);
             } else if (msg.state == MessageSync.STATE_FAILE) {
-                fab.setVisibility(View.GONE);
-                swipeRefreshLayout.setRefreshing(false);
+//                fab.setVisibility(View.GONE);
+//                swipeRefreshLayout.setRefreshing(false);
                 //Toast.makeText(this, getString(R.string.sync_error), Toast.LENGTH_LONG).show();
             } else {
-                fab.setVisibility(View.GONE);
-                swipeRefreshLayout.setRefreshing(false);
+//                fab.setVisibility(View.GONE);
+//                swipeRefreshLayout.setRefreshing(false);
 
             }
         } catch (Exception e) {
@@ -717,7 +720,7 @@ public class MainActivity extends AdsAppCompatActivity {
 
     @Subscribe
     public void onMessegeBrightness(MessegeBrightness msg) {
-        BrightnessHelper.onMessegeBrightness(handler, msg, toastBrightnessText, overlay);
+//        BrightnessHelper.onMessegeBrightness(handler, msg, toastBrightnessText, overlay);
     }
 
     public void checkGoToPage(Intent intent) {
@@ -762,9 +765,9 @@ public class MainActivity extends AdsAppCompatActivity {
         DocumentController.chooseFullScreen(this, AppState.get().fullScreenMainMode);
         TintUtil.updateAll();
         LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver, new IntentFilter(UIFragment.INTENT_TINT_CHANGE));
-        if (swipeRefreshLayout != null) {
-            swipeRefreshLayout.setEnabled(isPullToRefreshEnable());
-        }
+//        if (swipeRefreshLayout != null) {
+//            swipeRefreshLayout.setEnabled(isPullToRefreshEnable());
+//        }
 
         try {
             if (pager != null) {
@@ -891,7 +894,7 @@ public class MainActivity extends AdsAppCompatActivity {
         return super.onKeyLongPress(keyCode, event);
     }
 
-//    @Override
+    @Override
     public void onFinishActivity() {
         finish();
     }
