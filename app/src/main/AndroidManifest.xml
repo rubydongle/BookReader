@@ -35,7 +35,7 @@
         android:vmSafeMode="${appSafeMode}"
         tools:replace="label, icon, roundIcon">
         <activity
-            android:name="com.midas.comicreader.HomeActivity"
+            android:name="com.midas.comicreader.NotUsedHomeActivity"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
             android:exported="true"
             android:launchMode="singleTop"

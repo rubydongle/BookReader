@@ -25,7 +25,7 @@ import com.google.android.material.navigation.NavigationView;
 //import com.midas.comics.managers.LocalCoverHandler;
 //import com.squareup.picasso.Picasso;
 
-public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class NotUsedHomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout mDrawerLayout;
     NavigationView mNavigationView;

@@ -51,7 +51,6 @@ import com.foobnix.comicui.fragment.BrowseFragment2;
 import com.foobnix.comicui.fragment.OpdsFragment2;
 import com.foobnix.comicui.fragment.PrefFragment2;
 import com.foobnix.comicui.fragment.RecentFragment2;
-import com.foobnix.comicui.fragment.SearchFragment2;
 import com.foobnix.comicui.fragment.UIFragment;
 import com.foobnix.drive.GFile;
 import com.foobnix.ext.CacheZipUtils.CacheDir;
@@ -80,6 +79,7 @@ import com.foobnix.pdf.search.activity.msg.MsgCloseMainTabs;
 import com.foobnix.pdf.search.view.CloseAppDialog;
 import com.foobnix.sys.TempHolder;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.midas.comicreader.fragment.BookRackFragment;
 
 import org.ebookdroid.common.settings.books.SharedBooks;
 import org.ebookdroid.ui.viewer.VerticalViewActivity;
@@ -448,7 +448,8 @@ public class MainActivity extends AdsAppCompatActivity {
         } catch (Exception e) {
             LOG.e(e);
             Toast.makeText(MainActivity.this, R.string.msg_unexpected_error, Toast.LENGTH_LONG).show();
-            tabFragments.add(new SearchFragment2());
+//            tabFragments.add(new SearchFragment2());
+            tabFragments.add(new BookRackFragment());
             tabFragments.add(new BrowseFragment2());
             tabFragments.add(new RecentFragment2());
             tabFragments.add(new BookmarksFragment2());
@@ -619,7 +620,7 @@ public class MainActivity extends AdsAppCompatActivity {
 
                             @Override
                             public void run() {
-                                ((SearchFragment2) tabFragments.get(0)).searchAndOrderExteral(text);
+                                ((BookRackFragment) tabFragments.get(0)).searchAndOrderExteral(text);
                             }
                         }, 250);
                         break;
