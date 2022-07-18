@@ -34,6 +34,15 @@
         android:usesCleartextTraffic="true"
         android:vmSafeMode="${appSafeMode}"
         tools:replace="label, icon, roundIcon">
+        <activity
+            android:name="com.midas.comicreader.HomeActivity"
+            android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:resizeableActivity="true"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
 
         <activity
             android:name="com.midas.comicreader.MainActivity"

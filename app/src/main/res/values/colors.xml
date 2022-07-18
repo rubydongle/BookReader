@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="primary">#DB5162</color>
+    <color name="primaryDark">#B35159</color>
+    <color name="accent">#ff466e87</color>
+
+    <color name="darkest">#222222</color>
+    <color name="darkest_semitransparent">#ce222222</color>
+    <color name="darker">#333333</color>
+
+    <color name="lightest">#ffffff</color>
+    <color name="lighter">#dddddd</color>
+
+    <color name="circle_grey">#9d9d9d</color>
+    <color name="circle_red">#F44336</color>
+    <color name="circle_green">#4CAF50</color>
+
+    <color name="app_blue">#4285F4</color>
+    <color name="app_blue_dark">#3367D6</color>
+    <color name="app_green">#05b962</color>
+    <color name="app_green_dark">#0B8043</color>
+    <color name="app_yellow">#F4B400</color>
+    <color name="app_yellow_dark">#F09300</color>
+    <color name="app_red">#DB4437</color>
+    <color name="app_red_dark">#D32F2F</color>
+    <color name="app_white">#FFFFFF</color>
+
+    <color name="list_seperator">#11111111</color>
+
+
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>

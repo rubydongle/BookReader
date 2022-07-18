@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-<!--        android:theme="@style/Theme.NaviDrawerActivity.AppBarOverlay">-->
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary" />
-<!--            app:popupTheme="@style/Theme.NaviDrawerActivity.PopupOverlay" />-->
-
-    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipeRefreshLayout"
@@ -32,65 +21,82 @@
 
             <androidx.drawerlayout.widget.DrawerLayout
                 android:id="@+id/drawer_layout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+                <com.google.android.material.appbar.AppBarLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:background="@color/alpa_10" >
+<!--                    android:theme="@style/Theme.NaviDrawerActivity.AppBarOverlay">-->
 
-                    <LinearLayout
-                        android:id="@+id/imageParent1"
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#0000ff"
-                        android:orientation="horizontal">
+                        android:background="?attr/colorPrimary"
+                        android:minHeight="?attr/actionBarSize" />
+<!--                        app:popupTheme="@style/Theme.NaviDrawerActivity.PopupOverlay" />-->
 
-                        <ImageView
-                            android:id="@+id/imageMenu1"
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@color/alpa_10"
+                        android:orientation="vertical">
 
-                            android:layout_width="40dip"
-                            android:visibility="gone"
+                        <LinearLayout
+                            android:id="@+id/imageParent1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#0000ff"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imageMenu1"
+
+                                android:layout_width="40dip"
+                                android:visibility="gone"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="10dip"
+                                android:background="?android:attr/selectableItemBackground"
+                                android:contentDescription="@string/menu"
+                                android:gravity="center"
+                                android:padding="10dip"
+                                android:src="@drawable/glyphicons_517_menu_hamburger"
+                                />
+<!--                                android:tint="@color/white" />-->
+
+                            <com.foobnix.pdf.SlidingTabLayout
+                                android:id="@+id/slidingTabs1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0"
+                                android:background="#3949ab"
+                                android:elevation="2dip"
+                                android:visibility="gone"/>
+
+
+                        </LinearLayout>
+
+
+                        <androidx.viewpager.widget.ViewPager
+                            android:id="@+id/pager"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginLeft="10dip"
-                            android:background="?android:attr/selectableItemBackground"
-                            android:contentDescription="@string/menu"
-                            android:gravity="center"
-                            android:padding="10dip"
-                            android:src="@drawable/glyphicons_517_menu_hamburger"
-                            android:tint="@color/white" />
+                            android:layout_weight="1" />
 
                         <com.foobnix.pdf.SlidingTabLayout
-                            android:id="@+id/slidingTabs1"
+                            android:id="@+id/slidingTabs2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="0"
                             android:background="#3949ab"
                             android:elevation="2dip"
-                            android:visibility="gone"/>
-
+                            android:visibility="gone"></com.foobnix.pdf.SlidingTabLayout>
 
                     </LinearLayout>
 
 
-                    <androidx.viewpager.widget.ViewPager
-                        android:id="@+id/pager"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" />
-
-                    <com.foobnix.pdf.SlidingTabLayout
-                        android:id="@+id/slidingTabs2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0"
-                        android:background="#3949ab"
-                        android:elevation="2dip"
-                        android:visibility="gone"></com.foobnix.pdf.SlidingTabLayout>
-
-                </LinearLayout>
-
+                </com.google.android.material.appbar.AppBarLayout>
                 <FrameLayout
                     android:id="@+id/left_drawer"
                     android:layout_width="wrap_content"
@@ -121,7 +127,6 @@
                 android:textStyle="bold"
                 android:visibility="visible" />
 
-
             <com.foobnix.pdf.info.view.MyProgressBar
                 android:id="@+id/fab"
                 android:layout_width="@dimen/wh_button_small"
@@ -132,10 +137,7 @@
                 android:background="@drawable/bg_circular"
                 android:indeterminateDrawable="@drawable/my_progress" />
 
-
         </RelativeLayout>
-
-
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <FrameLayout

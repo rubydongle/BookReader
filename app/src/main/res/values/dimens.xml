@@ -48,7 +48,19 @@
     <dimen name="fastscroll_scrollbar_padding">8dp</dimen>
     
     <dimen name="downwards_drop_shadow_height">16dp</dimen>
-    
-    
+
+
+    <dimen name="header_padding_horizontal">20dp</dimen>
+    <dimen name="header_padding_vertical">10dp</dimen>
+
+    <dimen name="navigation_horizontal_padding">16dp</dimen>
+    <dimen name="navigation_item_height">48dp</dimen>
+    <dimen name="navigation_height">240dp</dimen>
+    <dimen name="navigation_title_size">14sp</dimen>
+    <dimen name="navigation_title_left_margin">24dp</dimen>
+    <dimen name="navigation_icon_size">24dp</dimen>
+
+    <dimen name="button_horizontal_padding">8dp</dimen>
+    <dimen name="button_horizontal_margin">4dp</dimen>
 
 </resources>
