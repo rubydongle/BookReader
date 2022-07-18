@@ -26,6 +26,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.drawerlayout.widget.DrawerLayout.DrawerListener;
@@ -95,7 +96,7 @@ import test.SvgActivity;
 
 
 @SuppressLint("NewApi")
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AdsAppCompatActivity {
     public static final int REQUEST_CODE_ADD_RESOURCE = 123;
     public static final String EXTRA_EXIT = "EXTRA_EXIT";
     public static final String EXTRA_SHOW_TABS = "EXTRA_SHOW_TABS";
@@ -385,13 +386,10 @@ public class MainActivity extends AppCompatActivity {
         DocumentController.doContextMenu(this);
 
         setContentView(R.layout.main_tabs);
-
-//        setSupportActionBar(findViewById(R.id.toolbar));
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("Bubble");
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu_white);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        ActionBar actionBar = getSupportActionBar();
-//        if (actionBar != null) {
-//            actionBar.setDisplayHomeAsUpEnabled(true);
-//        }
 
         imageMenu = (ImageView) findViewById(R.id.imageMenu1);
         imageMenuParent = findViewById(R.id.imageParent1);
@@ -873,7 +871,7 @@ public class MainActivity extends AppCompatActivity {
             pager.setCurrentItem(currentItem);
             IMG.clearMemoryCache();
         }
-//        activateAds();
+        activateAds();
 
     }
 
