@@ -72,11 +72,23 @@
 <!--                android:visibility="gone" />-->
         </LinearLayout>
     </com.google.android.material.appbar.AppBarLayout>
-    <FrameLayout
-        android:id="@+id/left_drawer"
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:fadeScrollbars="true"
         android:fitsSystemWindows="true"
-        android:background="#ffffff" />
+        android:overScrollMode="always"
+        android:scrollbars="none"
+        android:background="#aaaaaa"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_menu"/>
+<!--    <FrameLayout-->
+<!--        android:id="@+id/left_drawer"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_gravity="start"-->
+<!--        android:fitsSystemWindows="true"-->
+<!--        android:background="#ffffff" />-->
 </androidx.drawerlayout.widget.DrawerLayout>

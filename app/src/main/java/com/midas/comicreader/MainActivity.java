@@ -79,6 +79,7 @@ import com.foobnix.pdf.search.activity.msg.MsgCloseMainTabs;
 import com.foobnix.pdf.search.view.CloseAppDialog;
 import com.foobnix.sys.TempHolder;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.material.navigation.NavigationView;
 import com.midas.comicreader.fragment.BookRackFragment;
 
 import org.ebookdroid.common.settings.books.SharedBooks;
@@ -460,7 +461,43 @@ public class MainActivity extends AdsAppCompatActivity {
             tabFragments.add(new PrefFragment2());
             //tabFragments.add(new CloudsFragment2());
         }
-        getSupportFragmentManager().beginTransaction().replace(R.id.left_drawer, new PrefFragment2()).commit();
+//        getSupportFragmentManager().beginTransaction().replace(R.id.left_drawer, new PrefFragment2()).commit();
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.drawer_menu_library:
+//                        setFragment(new LibraryFragment());
+//                        mCurrentNavItem = menuItem.getItemId();
+//                menuItem.setChecked(true);
+                        break;
+                    case R.id.drawer_menu_browser:
+//                        setFragment(new BrowserFragment());
+//                        mCurrentNavItem = menuItem.getItemId();
+//                menuItem.setChecked(true);
+                        break;
+                    case R.id.drawer_menu_about:
+//                        startActivity(new Intent(this, AboutActivity.class));
+//                setTitle(R.string.menu_about);
+//                setFragment(new AboutFragment());
+                        break;
+                }
+
+                drawerLayout.closeDrawers();
+                return true;
+            }
+        });
+        MenuItem menuItem = navigationView.getMenu().findItem(R.id.send);
+        menuItem.setVisible(false);
+
+        Menu menu = navigationView.getMenu();
+//        menu.removeGroup(R.id.quck_nav);
+//        navigationView.getMenu().add(R.id.quck_nav, 1, 1, "testadd" );
+        int TEST_ADD_ID = 7878001;
+        navigationView.getMenu().add(R.id.quck_nav, TEST_ADD_ID, 98, "testadd" );
+        navigationView.getMenu().add(R.id.quck_nav, 2, 98, "testppp" );
+        menu.findItem(TEST_ADD_ID).setIcon(R.drawable.ic_menu_white);
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
@@ -477,7 +514,7 @@ public class MainActivity extends AdsAppCompatActivity {
 
         if (UITab.isShowPreferences()) {
             imageMenu.setVisibility(View.GONE);
-            drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+//            drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
         } else {
             imageMenu.setVisibility(View.VISIBLE);
         }
@@ -533,7 +570,6 @@ public class MainActivity extends AdsAppCompatActivity {
 //                if (AppSP.get().isEnableSync) {
 //                    swipeRefreshLayout.setEnabled(false);
 //                }
-
             }
 
             @Override
@@ -553,7 +589,6 @@ public class MainActivity extends AdsAppCompatActivity {
                 } catch (Exception e) {
                     LOG.e(e);
                 }
-
             }
         });
 
