@@ -479,6 +479,9 @@ public class MainActivity extends AdsAppCompatActivity {
                             LocalBroadcastManager.getInstance(activity).sendBroadcast(intent);
                         });
                         break;
+                    case R.id.settings:
+                        startActivity(new Intent(activity, SettingsActivity.class));
+                        break;
                     case R.id.drawer_menu_library:
 //                        setFragment(new LibraryFragment());
 //                        mCurrentNavItem = menuItem.getItemId();
