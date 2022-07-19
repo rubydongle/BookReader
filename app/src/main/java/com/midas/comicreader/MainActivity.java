@@ -44,6 +44,7 @@ import com.foobnix.android.utils.Safe;
 import com.foobnix.android.utils.StringDB;
 import com.foobnix.android.utils.TxtUtils;
 import com.foobnix.comicui.AdsFragmentActivity;
+import com.foobnix.comicui.BooksService;
 import com.foobnix.comicui.MyContextWrapper;
 import com.foobnix.comicui.adapter.TabsAdapter2;
 import com.foobnix.comicui.fragment.BookmarksFragment2;
@@ -69,6 +70,7 @@ import com.foobnix.pdf.info.model.BookCSS;
 import com.foobnix.pdf.info.view.BrightnessHelper;
 import com.foobnix.pdf.info.view.Dialogs;
 import com.foobnix.pdf.info.view.MyProgressBar;
+import com.foobnix.pdf.info.widget.PrefDialogs;
 import com.foobnix.pdf.info.wrapper.DocumentController;
 import com.foobnix.pdf.info.wrapper.UITab;
 import com.foobnix.pdf.search.activity.HorizontalViewActivity;
@@ -462,11 +464,21 @@ public class MainActivity extends AdsAppCompatActivity {
             //tabFragments.add(new CloudsFragment2());
         }
 //        getSupportFragmentManager().beginTransaction().replace(R.id.left_drawer, new PrefFragment2()).commit();
+        AppCompatActivity activity = this;
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
+                    case R.id.set_comic_library:
+                        PrefDialogs.chooseFolderDialog(activity, () -> AppProfile.save(activity), () -> {
+                            AppProfile.save(activity);
+                            BooksService.startForeground(activity, BooksService.ACTION_SEARCH_ALL);
+                            Intent intent = new Intent(UIFragment.INTENT_TINT_CHANGE)//
+                                    .putExtra(MainActivity.EXTRA_PAGE_NUMBER, UITab.getCurrentTabIndex(UITab.SearchFragment));//
+                            LocalBroadcastManager.getInstance(activity).sendBroadcast(intent);
+                        });
+                        break;
                     case R.id.drawer_menu_library:
 //                        setFragment(new LibraryFragment());
 //                        mCurrentNavItem = menuItem.getItemId();
@@ -488,7 +500,7 @@ public class MainActivity extends AdsAppCompatActivity {
                 return true;
             }
         });
-        MenuItem menuItem = navigationView.getMenu().findItem(R.id.send);
+        MenuItem menuItem = navigationView.getMenu().findItem(R.id.drawer_menu_about);
         menuItem.setVisible(false);
 
         Menu menu = navigationView.getMenu();

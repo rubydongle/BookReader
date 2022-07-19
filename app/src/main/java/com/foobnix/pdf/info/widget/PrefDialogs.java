@@ -26,6 +26,7 @@ import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
 import com.foobnix.R;
@@ -86,6 +87,97 @@ public class PrefDialogs {
     }
 
     public static void chooseFolderDialog(final FragmentActivity a, final Runnable onChanges, final Runnable onScan) {
+
+        final PathAdapter recentAdapter = new PathAdapter();
+        recentAdapter.setPaths(JsonDB.get(BookCSS.get().searchPathsJson));
+
+        final AlertDialog.Builder builder = new AlertDialog.Builder(a);
+        builder.setTitle(R.string.scan_device_for_new_books);
+
+        final ListView list = new ListView(a);
+
+        list.setAdapter(recentAdapter);
+
+        builder.setView(list);
+
+        builder.setPositiveButton(R.string.search, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int id) {
+                onScan.run();
+            }
+        });
+
+        builder.setNeutralButton(R.string.add, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int id) {
+                ChooserDialogFragment.chooseFolder(a, BookCSS.get().dirLastPath).setOnSelectListener(new ResultResponse2<String, Dialog>() {
+                    @Override
+                    public boolean onResultRecive(String nPath, Dialog dialog) {
+
+                        if (nPath.equals("/")) {
+                            Toast.makeText(a, String.format("[ / ] %s", a.getString(R.string.incorrect_value)), Toast.LENGTH_LONG).show();
+                            return false;
+                        }
+                        boolean isExists = false;
+                        String existPath = "";
+                        for (String str : JsonDB.get(BookCSS.get().searchPathsJson)) {
+                            if (str != null && str.trim().length() != 0 && nPath.equals(str)) {
+                                isExists = true;
+                                existPath = str;
+                                break;
+                            }
+                        }
+                        if (ExtUtils.isExteralSD(nPath)) {
+                            Toast.makeText(a, R.string.incorrect_value, Toast.LENGTH_SHORT).show();
+                        } else if (isExists) {
+                            Toast.makeText(a, String.format("[ %s == %s ] %s", nPath, existPath, a.getString(R.string.this_directory_is_already_in_the_list)), Toast.LENGTH_LONG).show();
+                        } else {
+                            BookCSS.get().searchPathsJson = JsonDB.add(BookCSS.get().searchPathsJson, nPath);
+                        }
+                        dialog.dismiss();
+                        onChanges.run();
+                        chooseFolderDialog(a, onChanges, onScan);
+                        return false;
+                    }
+
+                });
+
+            }
+        });
+
+        builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        recentAdapter.setOnDeleClick(new ResultResponse<Uri>() {
+
+            @Override
+            public boolean onResultRecive(Uri result) {
+                String path = result.getPath();
+                LOG.d("TEST", "Remove " + path);
+                BookCSS.get().searchPathsJson = JsonDB.remove(BookCSS.get().searchPathsJson, path);
+                LOG.d("TEST", "Remove " + BookCSS.get().searchPathsJson);
+                recentAdapter.setPaths(JsonDB.get(BookCSS.get().searchPathsJson));
+                onChanges.run();
+                return false;
+            }
+        });
+
+        AlertDialog create = builder.create();
+        create.setOnDismissListener(new OnDismissListener() {
+
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                Keyboards.hideNavigation(a);
+            }
+        });
+        create.show();
+    }
+
+
+    public static void chooseFolderDialog(final AppCompatActivity a, final Runnable onChanges, final Runnable onScan) {
 
         final PathAdapter recentAdapter = new PathAdapter();
         recentAdapter.setPaths(JsonDB.get(BookCSS.get().searchPathsJson));

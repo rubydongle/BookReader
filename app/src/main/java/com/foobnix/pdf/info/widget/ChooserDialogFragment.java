@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.FrameLayout.LayoutParams;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentActivity;
 
@@ -32,6 +33,16 @@ public class ChooserDialogFragment extends DialogFragment {
     }
 
     public static ChooserDialogFragment chooseFolder(FragmentActivity a, String initPath) {
+        ChooserDialogFragment ch = new ChooserDialogFragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt(BrowseFragment2.EXTRA_TYPE, BrowseFragment2.TYPE_SELECT_FOLDER);
+        bundle.putString(BrowseFragment2.EXTRA_INIT_PATH, initPath);
+        ch.setArguments(bundle);
+        ch.show(a.getSupportFragmentManager(), "da");
+        return ch;
+    }
+
+    public static ChooserDialogFragment chooseFolder(AppCompatActivity a, String initPath) {
         ChooserDialogFragment ch = new ChooserDialogFragment();
         Bundle bundle = new Bundle();
         bundle.putInt(BrowseFragment2.EXTRA_TYPE, BrowseFragment2.TYPE_SELECT_FOLDER);

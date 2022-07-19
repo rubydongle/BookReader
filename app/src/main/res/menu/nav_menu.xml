@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+<!--    <item-->
+<!--        android:orderInCategory="90"-->
+<!--        android:visible="true"-->
+<!--        android:title="存储设备">-->
+<!--        <menu>-->
+<!--            <item android:title="内部存储"-->
+<!--                android:icon="@drawable/ic_menu_scan"/>-->
+<!--            <item-->
+<!--                android:title="外部存储"-->
+<!--                android:icon="@drawable/ic_menu_white"/>-->
+<!--        </menu>-->
+<!--    </item>-->
+    <item
+        android:orderInCategory="95"
+        android:visible="true"
+        android:title="漫画库">
+        <menu>
+            <item android:title="阅读"
+                android:icon="@drawable/ic_menu_scan"/>
+            <item
+                android:title="系列"
+                android:icon="@drawable/ic_menu_white"/>
+            <item android:title="文件夹"
+                android:icon="@drawable/ic_menu_scan"/>
+            <item
+                android:title="已读"
+                android:icon="@drawable/ic_menu_white"/>
+            <item android:title="未读"
+                android:icon="@drawable/ic_menu_scan"/>
+            <item android:title="位置"
+                android:icon="@drawable/ic_menu_scan"/>
+            <item
+                android:title="喜爱"
+                android:icon="@drawable/ic_menu_white"/>
+        </menu>
+    </item>
+    <item
+        android:title="配置漫画目录"
+        android:id="@+id/set_comic_library"
+        android:icon="@drawable/ic_menu_white"/>
     <group
         android:id="@+id/quck_nav"
         android:checkableBehavior="single"
@@ -33,13 +73,13 @@
     <item
         android:orderInCategory="100"
         android:visible="true"
-        android:title="Communicate">
+        android:title="通用">
         <menu>
-            <item android:title="Share"
-                android:icon="@drawable/ic_menu_scan"/>
+            <item android:title="设置"
+                android:icon="@drawable/ic_settings"/>
             <item
-                android:id="@+id/send"
-                android:title="Send"
+                android:id="@+id/about"
+                android:title="关于"
                 android:icon="@drawable/ic_menu_white"/>
         </menu>
     </item>
