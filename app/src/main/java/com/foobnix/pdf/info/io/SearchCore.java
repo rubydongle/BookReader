@@ -129,22 +129,17 @@ public class SearchCore {
             return Collections.emptyList();
         }
         ArrayList<FileMeta> files = new ArrayList<FileMeta>();
-
         File[] listFiles = null;
-
         if (isDisplayAllFilesInFolder) {
             listFiles = file.listFiles();
         } else {
             listFiles = file.listFiles(SUPPORTED_EXT_AND_DIRS_FILTER);
         }
-
         if (listFiles == null || listFiles.length == 0) {
             return Collections.emptyList();
         }
-
         List<File> res = new ArrayList<File>(Arrays.asList(listFiles));
         // Collections.sort(res, FILES_AND_DIRS_COMPARATOR);
-
         for (File it : res) {
             if (!isDisplayAllFilesInFolder && it.getName().startsWith(".")) {
                 continue;
@@ -152,9 +147,7 @@ public class SearchCore {
             if (!isDisplayAllFilesInFolder && filterEmpty && !isDirderctoryWithBook(it, 0)) {
                 continue;
             }
-
             FileMeta meta = new FileMeta(it.getPath());
-
             if (it.isDirectory()) {
                 FileMetaCore.get().upadteBasicMeta(meta, it);
                 meta.setCusType(FileMetaAdapter.DISPLAY_TYPE_DIRECTORY);
@@ -172,7 +165,6 @@ public class SearchCore {
             }
             files.add(meta);
         }
-
         return files;
     }
 

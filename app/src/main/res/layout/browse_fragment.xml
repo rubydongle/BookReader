@@ -152,69 +152,69 @@
             android:src="@drawable/glyphicons_114_justify" />
     </LinearLayout>
 
-   <androidx.cardview.widget.CardView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="@dimen/dv"
-    android:id="@+id/openAsBook"
-    android:background="?android:attr/selectableItemBackground"
-    android:elevation="@dimen/dv"
-    card_view:cardCornerRadius="@dimen/radius" >
-
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dv"
+        android:id="@+id/openAsBook"
         android:background="?android:attr/selectableItemBackground"
-        android:gravity="center_vertical"
-        android:id="@+id/openAsBookBg"
-        android:orientation="horizontal"
-        android:padding="@dimen/dv" >
-
-        <ImageView
-            android:id="@+id/openAsbookImage"
-            android:layout_width="@dimen/wh_button"
-            android:layout_height="@dimen/wh_button"
-            android:layout_margin="4dip"
-            android:padding="4dip"
-            android:layout_weight="0"
-            android:tintMode="@color/tint_blue"
-            android:src="@drawable/glyphicons_2_book_open" />
+        android:elevation="@dimen/dv"
+        card_view:cardCornerRadius="@dimen/radius" >
 
         <LinearLayout
-            android:layout_weight="1"
-            android:orientation="vertical"
+            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="8dip"
-            android:gravity="center_vertical" >
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:id="@+id/openAsBookBg"
+            android:orientation="horizontal"
+            android:padding="@dimen/dv" >
 
-            <TextView
-                android:id="@+id/text1"
+            <ImageView
+                android:id="@+id/openAsbookImage"
+                android:layout_width="@dimen/wh_button"
+                android:layout_height="@dimen/wh_button"
+                android:layout_margin="4dip"
+                android:padding="4dip"
+                android:layout_weight="0"
+                android:tintMode="@color/tint_blue"
+                android:src="@drawable/glyphicons_2_book_open" />
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:ellipsize="end"
-                android:gravity="center_vertical"
-                android:singleLine="true"
-                android:text="@string/open_folder_as_a_book"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:layout_marginLeft="8dip"
+                android:gravity="center_vertical" >
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="@string/open_folder_as_a_book"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/starIconDir"
+                android:layout_width="@dimen/wh_button"
+                android:layout_height="@dimen/wh_button"
+                android:layout_weight="0"
+                android:layout_marginRight="8dip"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="7dip"
+                android:src="@drawable/star_2"
+                android:tint="@color/tint_gray" />
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/starIconDir"
-            android:layout_width="@dimen/wh_button"
-            android:layout_height="@dimen/wh_button"
-            android:layout_weight="0"
-            android:layout_marginRight="8dip"
-            android:background="?android:attr/selectableItemBackground"
-            android:padding="7dip"
-            android:src="@drawable/star_2"
-            android:tint="@color/tint_gray" />
-    </LinearLayout>
-
-</androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -226,14 +226,9 @@
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="4dip" >
-        </com.foobnix.comicui.fast.FastScrollRecyclerView>
+            android:padding="4dip"/>
 
-
-        
     </FrameLayout>
-
-
 
     <EditText
         android:id="@+id/editPath"

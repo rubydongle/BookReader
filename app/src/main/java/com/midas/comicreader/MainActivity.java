@@ -31,7 +31,6 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.drawerlayout.widget.DrawerLayout.DrawerListener;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener;
 
@@ -43,7 +42,6 @@ import com.foobnix.android.utils.LOG;
 import com.foobnix.android.utils.Safe;
 import com.foobnix.android.utils.StringDB;
 import com.foobnix.android.utils.TxtUtils;
-import com.foobnix.comicui.AdsFragmentActivity;
 import com.foobnix.comicui.BooksService;
 import com.foobnix.comicui.MyContextWrapper;
 import com.foobnix.comicui.adapter.TabsAdapter2;
@@ -68,8 +66,6 @@ import com.foobnix.pdf.info.PasswordDialog;
 import com.foobnix.pdf.info.TintUtil;
 import com.foobnix.pdf.info.model.BookCSS;
 import com.foobnix.pdf.info.view.BrightnessHelper;
-import com.foobnix.pdf.info.view.Dialogs;
-import com.foobnix.pdf.info.view.MyProgressBar;
 import com.foobnix.pdf.info.widget.PrefDialogs;
 import com.foobnix.pdf.info.wrapper.DocumentController;
 import com.foobnix.pdf.info.wrapper.UITab;
@@ -83,6 +79,7 @@ import com.foobnix.sys.TempHolder;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.material.navigation.NavigationView;
 import com.midas.comicreader.fragment.BookRackFragment;
+import com.midas.comicreader.fragment.BrowseFragment;
 
 import org.ebookdroid.common.settings.books.SharedBooks;
 import org.ebookdroid.ui.viewer.VerticalViewActivity;
@@ -433,8 +430,11 @@ public class MainActivity extends AdsAppCompatActivity {
 
         tabFragments = new ArrayList<UIFragment>();
 
+        boolean useNew = true;
         try {
-
+            if (useNew) {
+                throw new Exception();
+            }
             for (UITab tab : UITab.getOrdered()) {
                 if (tab.isVisible()) {
                     tabFragments.add(tab.getClazz().newInstance());
@@ -456,7 +456,7 @@ public class MainActivity extends AdsAppCompatActivity {
             Toast.makeText(MainActivity.this, R.string.msg_unexpected_error, Toast.LENGTH_LONG).show();
 //            tabFragments.add(new SearchFragment2());
             tabFragments.add(new BookRackFragment());
-            tabFragments.add(new BrowseFragment2());
+            tabFragments.add(new BrowseFragment());
             tabFragments.add(new RecentFragment2());
             tabFragments.add(new BookmarksFragment2());
             tabFragments.add(new OpdsFragment2());

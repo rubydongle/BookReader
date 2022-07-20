@@ -153,29 +153,29 @@ public class SettingsFragment extends UIFragment {
 
     @Override
     public void onTintChanged() {
-        TintUtil.setStatusBarColor(getActivity(), TintUtil.color);
-        TintUtil.setBackgroundFillColor(section1, TintUtil.color);
-        TintUtil.setBackgroundFillColor(section2, TintUtil.color);
-        TintUtil.setBackgroundFillColor(section3, TintUtil.color);
-        TintUtil.setBackgroundFillColor(section4, TintUtil.color);
-        TintUtil.setBackgroundFillColor(section5, TintUtil.color);
-        TintUtil.setBackgroundFillColor(section6, TintUtil.color);
-        TintUtil.setBackgroundFillColor(section7, TintUtil.color);
-        TintUtil.setBackgroundFillColor(section8, TintUtil.color);
+//        TintUtil.setStatusBarColor(getActivity(), TintUtil.color);
+//        TintUtil.setBackgroundFillColor(section1, TintUtil.color);
+//        TintUtil.setBackgroundFillColor(section2, TintUtil.color);
+//        TintUtil.setBackgroundFillColor(section3, TintUtil.color);
+//        TintUtil.setBackgroundFillColor(section4, TintUtil.color);
+//        TintUtil.setBackgroundFillColor(section5, TintUtil.color);
+//        TintUtil.setBackgroundFillColor(section6, TintUtil.color);
+//        TintUtil.setBackgroundFillColor(section7, TintUtil.color);
+//        TintUtil.setBackgroundFillColor(section8, TintUtil.color);
 //        TintUtil.setBackgroundFillColor(section9, TintUtil.color);
 
-        if (profileLetter != null && getActivity() != null) {
-            final String p = AppProfile.getCurrent(getActivity());
-            profileLetter.setText(TxtUtils.getFirstLetter(p));
-            profileLetter.setBackgroundDrawable(AppProfile.getProfileColorDrawable(getActivity(), TintUtil.color));
-            profileLetter.setContentDescription(p + " " + getString(R.string.profile));
-        }
-
-
-        if (AppState.get().appTheme == AppState.THEME_INK) {
-            TxtUtils.setInkTextView(inflate.getRootView());
-        }
-
+//        if (profileLetter != null && getActivity() != null) {
+//            final String p = AppProfile.getCurrent(getActivity());
+//            profileLetter.setText(TxtUtils.getFirstLetter(p));
+//            profileLetter.setBackgroundDrawable(AppProfile.getProfileColorDrawable(getActivity(), TintUtil.color));
+//            profileLetter.setContentDescription(p + " " + getString(R.string.profile));
+//        }
+//
+//
+//        if (AppState.get().appTheme == AppState.THEME_INK) {
+//            TxtUtils.setInkTextView(inflate.getRootView());
+//        }
+//
 
     }
 
@@ -926,77 +926,6 @@ public class SettingsFragment extends UIFragment {
             handler.postDelayed(ask, timeout);
         });
 
-        ((CheckBox) inflate.findViewById(R.id.supportXPS)).setChecked(AppState.get().supportXPS);
-        ((CheckBox) inflate.findViewById(R.id.supportXPS)).setOnCheckedChangeListener((buttonView, isChecked) -> {
-            AppState.get().supportXPS = isChecked;
-            ExtUtils.updateSearchExts();
-            handler.removeCallbacks(ask);
-            handler.postDelayed(ask, timeout);
-        });
-
-        ((CheckBox) inflate.findViewById(R.id.supportDJVU)).setChecked(AppState.get().supportDJVU);
-        ((CheckBox) inflate.findViewById(R.id.supportDJVU)).setOnCheckedChangeListener((buttonView, isChecked) -> {
-            AppState.get().supportDJVU = isChecked;
-            ExtUtils.updateSearchExts();
-            handler.removeCallbacks(ask);
-            handler.postDelayed(ask, timeout);
-        });
-        ((CheckBox) inflate.findViewById(R.id.supportEPUB)).setChecked(AppState.get().supportEPUB);
-        ((CheckBox) inflate.findViewById(R.id.supportEPUB)).setOnCheckedChangeListener((buttonView, isChecked) -> {
-            AppState.get().supportEPUB = isChecked;
-            ExtUtils.updateSearchExts();
-            handler.removeCallbacks(ask);
-            handler.postDelayed(ask, timeout);
-        });
-        ((CheckBox) inflate.findViewById(R.id.supportFB2)).setChecked(AppState.get().supportFB2);
-        ((CheckBox) inflate.findViewById(R.id.supportFB2)).setOnCheckedChangeListener((buttonView, isChecked) -> {
-            AppState.get().supportFB2 = isChecked;
-            ExtUtils.updateSearchExts();
-            handler.removeCallbacks(ask);
-            handler.postDelayed(ask, timeout);
-        });
-
-        ((CheckBox) inflate.findViewById(R.id.supportTXT)).setChecked(AppState.get().supportTXT);
-        ((CheckBox) inflate.findViewById(R.id.supportTXT)).setOnCheckedChangeListener((buttonView, isChecked) -> {
-            AppState.get().supportTXT = isChecked;
-            ExtUtils.updateSearchExts();
-            handler.removeCallbacks(ask);
-            handler.postDelayed(ask, timeout);
-        });
-
-        ((CheckBox) inflate.findViewById(R.id.supportMOBI)).setChecked(AppState.get().supportMOBI);
-        ((CheckBox) inflate.findViewById(R.id.supportMOBI)).setOnCheckedChangeListener((buttonView, isChecked) -> {
-            AppState.get().supportMOBI = isChecked;
-            ExtUtils.updateSearchExts();
-            handler.removeCallbacks(ask);
-            handler.postDelayed(ask, timeout);
-        });
-
-        ((CheckBox) inflate.findViewById(R.id.supportRTF)).setChecked(AppState.get().supportRTF);
-        ((CheckBox) inflate.findViewById(R.id.supportRTF)).setOnCheckedChangeListener((buttonView, isChecked) -> {
-            AppState.get().supportRTF = isChecked;
-            ExtUtils.updateSearchExts();
-            handler.removeCallbacks(ask);
-            handler.postDelayed(ask, timeout);
-        });
-
-        ((CheckBox) inflate.findViewById(R.id.supportDOCX)).setChecked(AppState.get().supportDOCX);
-        ((CheckBox) inflate.findViewById(R.id.supportDOCX)).setOnCheckedChangeListener((buttonView, isChecked) -> {
-            AppState.get().supportDOCX = isChecked;
-            ExtUtils.updateSearchExts();
-            handler.removeCallbacks(ask);
-            handler.postDelayed(ask, timeout);
-        });
-
-
-        ((CheckBox) inflate.findViewById(R.id.supportODT)).setChecked(AppState.get().supportODT);
-        ((CheckBox) inflate.findViewById(R.id.supportDOCX)).setText(AppsConfig.isDOCXSupported ? "DOC/DOCX" : "DOC");
-        ((CheckBox) inflate.findViewById(R.id.supportODT)).setOnCheckedChangeListener((buttonView, isChecked) -> {
-            AppState.get().supportODT = isChecked;
-            ExtUtils.updateSearchExts();
-            handler.removeCallbacks(ask);
-            handler.postDelayed(ask, timeout);
-        });
 
         ((CheckBox) inflate.findViewById(R.id.supportCBZ)).setChecked(AppState.get().supportCBZ);
         ((CheckBox) inflate.findViewById(R.id.supportCBZ)).setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -1020,16 +949,6 @@ public class SettingsFragment extends UIFragment {
         supportArch.setText(getString(R.string.archives) + " (RAR/7z/...)");
         supportArch.setOnCheckedChangeListener((buttonView, isChecked) -> {
             AppState.get().supportArch = isChecked;
-            ExtUtils.updateSearchExts();
-            handler.removeCallbacks(ask);
-            handler.postDelayed(ask, timeout);
-        });
-
-        CheckBox supportOther = inflate.findViewById(R.id.supportOther);
-        supportOther.setChecked(AppState.get().supportOther);
-        supportOther.setText(getString(R.string.other) + " (CHM/...)");
-        supportOther.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            AppState.get().supportOther = isChecked;
             ExtUtils.updateSearchExts();
             handler.removeCallbacks(ask);
             handler.postDelayed(ask, timeout);

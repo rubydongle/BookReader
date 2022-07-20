@@ -471,7 +471,7 @@ public class AppState {
     public int colorDayBg = COLOR_WHITE;
     public int colorNigthText = COLOR_WHITE;
     public int colorNigthBg = COLOR_BLACK;
-    public boolean supportPDF = false;
+    public boolean supportPDF = true;
     public boolean supportXPS = false;
     public boolean supportDJVU = false;
     public boolean supportEPUB = false;
@@ -481,8 +481,8 @@ public class AppState {
     public boolean supportDOCX = false;
     public boolean supportMOBI = false;
     public boolean supportCBZ = true;
-    public boolean supportZIP = false;
-    public boolean supportArch = false;
+    public boolean supportZIP = true;
+    public boolean supportArch = true;
     public boolean supportOther = false;
     public boolean supportTXT = false;
     public boolean isPreText = false;

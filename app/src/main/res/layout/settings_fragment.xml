@@ -24,8 +24,6 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:text="@string/library_settings" />
-
-
         </LinearLayout>
 
         <TextView
@@ -62,102 +60,9 @@
             android:orientation="horizontal">
 
             <CheckBox
-                android:id="@+id/supportPDF"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="0dip"
-                android:minWidth="110dp"
-                android:padding="-5dip"
-                android:text="PDF"
-                android:textSize="11sp" />
-
-            <CheckBox
-                android:id="@+id/supportDJVU"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="90dp"
-                android:text="DJVU"
-                android:textSize="11sp" />
-
-            <CheckBox
-                android:id="@+id/supportFB2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="110dp"
-                android:text="FB2"
-                android:textSize="11sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/supportMOBI"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="110dp"
-                android:text="MOBI/AZW"
-                android:textSize="11sp" />
-
-            <CheckBox
-                android:id="@+id/supportEPUB"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="90dp"
-                android:text="EPUB"
-                android:textSize="11sp" />
-
-            <CheckBox
-                android:id="@+id/supportXPS"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="110dp"
-                android:text="XPS"
-                android:textSize="11sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/supportDOCX"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="110dp"
-                android:text="DOC/DOCX"
-                android:textSize="11sp" />
-
-            <CheckBox
-                android:id="@+id/supportRTF"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="90dp"
-                android:text="RTF"
-                android:textSize="11sp" />
-
-            <CheckBox
-                android:id="@+id/supportODT"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minWidth="110dp"
-                android:text="ODT"
-                android:textSize="11sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <CheckBox
                 android:id="@+id/supportCBZ"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:minWidth="110dp"
                 android:text="CBZ/CBR"
                 android:textSize="11sp" />
 
@@ -165,80 +70,75 @@
                 android:id="@+id/supportZIP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:minWidth="90dip"
                 android:text="ZIP"
                 android:textSize="11sp" />
 
             <CheckBox
-                android:id="@+id/supportTXT"
+                android:id="@+id/supportPDF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:minWidth="110dp"
-                android:text="HTML/TXT"
+                android:layout_margin="0dip"
+                android:padding="-5dip"
+                android:text="PDF"
                 android:textSize="11sp" />
 
+            <CheckBox
+                android:id="@+id/supportArch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/archives"
+                android:textSize="11sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
 
+            <ImageView
+                android:layout_width="@dimen/wh_button"
+                android:layout_height="@dimen/wh_button"
+                android:layout_weight="0"
+                android:padding="8dip"
+                android:src="@drawable/glyphicons_137_cogwheel"
+                android:tint="@color/tint_gray" />
+
+            <TextView
+                android:id="@+id/moreLybraryettings"
+                style="@style/textLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/library_settings" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dip"
-                android:text="@string/search_not_supported_formats"
-                android:visibility="gone" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-
-                <CheckBox
-                    android:id="@+id/supportArch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minWidth="110dp"
-                    android:text="@string/archives"
-                    android:textSize="11sp" />
-
-                <CheckBox
-                    android:id="@+id/supportOther"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minWidth="110dp"
-                    android:text="@string/other"
-                    android:textSize="11sp" />
-            </LinearLayout>
-
-            <LinearLayout
-
+            <CheckBox
+                android:id="@+id/isAppPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical">
+                android:layout_weight="1"
+                android:text="@string/request_a_password_when_the_application_starts" />
 
-                <ImageView
-                    android:layout_width="@dimen/wh_button"
-                    android:layout_height="@dimen/wh_button"
-                    android:layout_weight="0"
-                    android:padding="8dip"
-                    android:src="@drawable/glyphicons_137_cogwheel"
-                    android:tint="@color/tint_gray"
-                    android:visibility="gone" />
-
-                <TextView
-                    android:id="@+id/moreLybraryettings"
-                    style="@style/textLink"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/library_settings" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/appPassword"
+                style="@style/textLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:minWidth="100dip"
+                android:singleLine="false"
+                android:text="@string/password" />
         </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/isOpenLastBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/opening_the_last_book_when_the_application_starts" />
 
         <TextView
             android:id="@+id/section2"
@@ -623,35 +523,6 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <CheckBox
-                android:id="@+id/isAppPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/request_a_password_when_the_application_starts" />
-
-            <TextView
-                android:id="@+id/appPassword"
-                style="@style/textLink"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:minWidth="100dip"
-                android:singleLine="false"
-                android:text="@string/password" />
-        </LinearLayout>
-
-        <CheckBox
-            android:id="@+id/isOpenLastBook"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/opening_the_last_book_when_the_application_starts" />
 
         <CheckBox
             android:id="@+id/isRestoreSearchQuery"
