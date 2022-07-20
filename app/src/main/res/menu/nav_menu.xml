@@ -40,35 +40,35 @@
         android:title="配置漫画目录"
         android:id="@+id/set_comic_library"
         android:icon="@drawable/ic_menu_white"/>
-    <group
-        android:id="@+id/quck_nav"
-        android:checkableBehavior="single"
-        android:orderInCategory="98">
-        <item android:id="@+id/drawer_menu_library"
-              android:icon="@drawable/ic_my_library_books_grey600_24dp"
-              android:title="@string/menu_library"/>
-        <item android:id="@+id/drawer_menu_browser"
-              android:icon="@drawable/ic_folder_grey600_24dp"
-              android:title="@string/menu_browser"/>
-        <item android:id="@+id/drawer_menu_scan"
-            android:icon="@drawable/ic_menu_scan"
-            android:title="@string/menu_scan"/>
-        <item android:id="@+id/drawer_menu_settings"
-            android:icon="@drawable/ic_settings"
-            android:title="@string/menu_settings"/>
-        <item android:id="@+id/drawer_menu_about"
-              android:icon="@drawable/ic_info_grey600_24dp"
-              android:title="@string/menu_about"/>
-    </group>
-    <group android:id="@+id/group2"
-        android:orderInCategory="99">
-        <item android:id="@+id/drawer_menu_settings2"
-            android:icon="@drawable/ic_settings"
-            android:title="@string/menu_settings"/>
-        <item android:id="@+id/drawer_menu_about2"
-            android:icon="@drawable/ic_info_grey600_24dp"
-            android:title="@string/menu_about"/>
-    </group>
+<!--    <group-->
+<!--        android:id="@+id/quck_nav"-->
+<!--        android:checkableBehavior="single"-->
+<!--        android:orderInCategory="98">-->
+<!--        <item android:id="@+id/drawer_menu_library"-->
+<!--              android:icon="@drawable/ic_my_library_books_grey600_24dp"-->
+<!--              android:title="@string/menu_library"/>-->
+<!--        <item android:id="@+id/drawer_menu_browser"-->
+<!--              android:icon="@drawable/ic_folder_grey600_24dp"-->
+<!--              android:title="@string/menu_browser"/>-->
+<!--        <item android:id="@+id/drawer_menu_scan"-->
+<!--            android:icon="@drawable/ic_menu_scan"-->
+<!--            android:title="@string/menu_scan"/>-->
+<!--        <item android:id="@+id/drawer_menu_settings"-->
+<!--            android:icon="@drawable/ic_settings"-->
+<!--            android:title="@string/menu_settings"/>-->
+<!--        <item android:id="@+id/drawer_menu_about"-->
+<!--              android:icon="@drawable/ic_info_grey600_24dp"-->
+<!--              android:title="@string/menu_about"/>-->
+<!--    </group>-->
+<!--    <group android:id="@+id/group2"-->
+<!--        android:orderInCategory="99">-->
+<!--        <item android:id="@+id/drawer_menu_settings2"-->
+<!--            android:icon="@drawable/ic_settings"-->
+<!--            android:title="@string/menu_settings"/>-->
+<!--        <item android:id="@+id/drawer_menu_about2"-->
+<!--            android:icon="@drawable/ic_info_grey600_24dp"-->
+<!--            android:title="@string/menu_about"/>-->
+<!--    </group>-->
 
     <item
         android:orderInCategory="100"

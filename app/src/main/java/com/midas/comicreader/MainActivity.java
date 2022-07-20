@@ -503,16 +503,16 @@ public class MainActivity extends AdsAppCompatActivity {
                 return true;
             }
         });
-        MenuItem menuItem = navigationView.getMenu().findItem(R.id.drawer_menu_about);
-        menuItem.setVisible(false);
+//        MenuItem menuItem = navigationView.getMenu().findItem(R.id.drawer_menu_about);
+//        menuItem.setVisible(false);
 
-        Menu menu = navigationView.getMenu();
+//        Menu menu = navigationView.getMenu();
 //        menu.removeGroup(R.id.quck_nav);
 //        navigationView.getMenu().add(R.id.quck_nav, 1, 1, "testadd" );
-        int TEST_ADD_ID = 7878001;
-        navigationView.getMenu().add(R.id.quck_nav, TEST_ADD_ID, 98, "testadd" );
-        navigationView.getMenu().add(R.id.quck_nav, 2, 98, "testppp" );
-        menu.findItem(TEST_ADD_ID).setIcon(R.drawable.ic_menu_white);
+//        int TEST_ADD_ID = 7878001;
+//        navigationView.getMenu().add(R.id.quck_nav, TEST_ADD_ID, 98, "testadd" );
+//        navigationView.getMenu().add(R.id.quck_nav, 2, 98, "testppp" );
+//        menu.findItem(TEST_ADD_ID).setIcon(R.drawable.ic_menu_white);
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
